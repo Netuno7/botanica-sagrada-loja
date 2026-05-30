@@ -61,7 +61,7 @@ export default function LojaEsoterica() {
           </p>
 
           <a
-            href="https://wa.me/5522992294680"
+            href="https://wa.me/554797002521"
             target="_blank"
             rel="noreferrer"
             className="inline-block px-10 py-5 rounded-2xl font-semibold text-lg bg-gradient-to-r from-purple-700 to-violet-500 hover:scale-105 transition-all duration-300 shadow-2xl"
