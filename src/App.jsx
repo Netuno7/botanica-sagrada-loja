@@ -6,7 +6,7 @@ import Banhos from "./pages/Banhos.jsx";
 import Oleos from "./pages/Oleos.jsx";
 import Chas from "./pages/Chas.jsx";
 import Patuas from "./pages/Patuas.jsx";
-import Kits from "./pages/Kits.jsx";
+import Kits from "./pages/Kits";
 
 export default function App() {
   return (
