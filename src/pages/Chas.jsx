@@ -1,3 +1,3 @@
 export default function Chas() {
-  return <h1>Chás</h1>;
+  return <h1 className="text-white p-10">Chás</h1>;
 }

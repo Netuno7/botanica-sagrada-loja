@@ -1,3 +1,3 @@
 export default function Patuas() {
-  return <h1>Patuás</h1>;
+  return <h1 className="text-white p-10">Patuás</h1>;
 }
