@@ -19,39 +19,41 @@ export default function Home() {
   // Catálogo completo com 3 itens por categoria (Amor, Prosperidade e Proteção)
   const produtos = [
     // === VELAS ===
-    { id: 1, nome: 'Vela Aromática de Quartzo Rosa (Amor)', categoria: 'Velas', preco: 'R$ 45,00', imagem: '/produtos/vela-amor.jpg', desc: 'Desperta o amor-próprio, a harmonia familiar e a cura emocional.' },
-    { id: 2, nome: 'Vela de Canela & Louro (Prosperidade)', categoria: 'Velas', preco: 'R$ 45,00', imagem: '/produtos/vela-prosperidade.jpg', desc: 'Atrai abundância, sucesso financeiro e abre caminhos.' },
-    { id: 3, nome: 'Vela de Arruda & Sal Grosso (Proteção)', categoria: 'Velas', preco: 'R$ 45,00', imagem: '/produtos/vela-protecao.jpg', desc: 'Limpeza espiritual profunda e proteção contra energias densas.' },
+    { id: 1, nome: 'Vela Rosa do Amor', categoria: 'Velas', preco: 'R$ 15,00', imagem: '/produtos/vela-amor.png', desc: 'Uma vela artesanal em formato de rosa, criada para compor momentos de carinho, romantismo e autocuidado.' },
+    { id: 2, nome: 'Vela de Lavanda para Harmonia (Aromatizada)', categoria: 'Velas', preco: 'R$ 30,00', imagem: '/produtos/vela-lavanda.png', desc: 'Ideal para criar uma atmosfera acolhedora, relaxante e harmoniosa, perfeita para momentos de descanso e bem-estar.' },
+    { id: 3, nome: 'Vela Lavanda Premium (Aromatizada)', categoria: 'Velas', preco: 'R$ 30,00', imagem: '/produtos/vela-lavanda-rosa.png', desc: 'Esta vela artesanal destaca a delicadeza da lavanda em uma apresentação refinada.' },
+   {
+  id: 4,nome: 'Vela de Canela e Especiarias (Aromatizada)',categoria: 'Velas',preco: 'R$ 30,00',imagem: '/produtos/vela-canela.png',desc: 'Uma combinação marcante de canela, cravo e ervas aromáticas que transforma o ambiente com um toque quente e aconchegante.'},
 
     // === CHÁS ===
-    { id: 4, nome: 'Chá Sopro de Vênus (Amor)', categoria: 'Chás', preco: 'R$ 26,00', imagem: '/produtos/cha-amor.jpeg', desc: 'Infusão de hibisco, jasmim e maçã para magnetismo e afeto.' },
-    { id: 5, nome: 'Chá Alquimia do Ouro (Prosperidade)', categoria: 'Chás', preco: 'R$ 26,00', imagem: '/produtos/cha-prosperidade.jpg', desc: 'Blend de calêndula, louro e hortelã para atrair boa sorte.' },
-    { id: 6, nome: 'Chá Escudo Sagrado (Proteção)', categoria: 'Chás', preco: 'R$ 26,00', imagem: '/produtos/cha-protecao.jpg', desc: 'Composto de guiné, sálvia e alecrim para blindagem energética.' },
+    { id: 5, nome: 'Chá Sopro de Vênus (Amor)', categoria: 'Chás', preco: 'R$ 10,00', imagem: '/produtos/cha-amor.jpeg', desc: 'Infusão de hibísco, Artemisía e Manjericão para magnetismo e afeto.' },
+    { id: 6, nome: 'Chá Alquimia do Ouro (Prosperidade)', categoria: 'Chás', preco: 'R$ 10,00', imagem: '/produtos/cha-prosperidade.png', desc: 'Blend de Alecrim, Louro e Canela para atrair boa sorte.' },
+    { id: 7, nome: 'Chá Escudo Sagrado (Proteção)', categoria: 'Chás', preco: 'R$ 10,00', imagem: '/produtos/cha-protecao.jpg', desc: 'Composto de Eucalipto, sálvia e Arruda para blindagem energética.' },
 
     // === ÓLEOS ===
-    { id: 7, nome: 'Óleo de Unção Atração (Amor)', categoria: 'Óleos', preco: 'R$ 58,00', imagem: '/produtos/oleo-amor.jpeg', desc: 'Elixir com óleo essencial de rosas para o chakra cardíaco.' },
-    { id: 8, nome: 'Óleo Alquímico Fortuna (Prosperidade)', categoria: 'Óleos', preco: 'R$ 58,00', imagem: '/produtos/oleo-prosperidade.jpeg', desc: 'Infusionado com pirita e bergamota para atrair riqueza.' },
-    { id: 9, nome: 'Óleo Protetor Luz Áurica (Proteção)', categoria: 'Óleos', preco: 'R$ 58,00', imagem: '/produtos/oleo-protecao.jpeg', desc: 'Olíbano e mirra para selar a aura contra negatividade.' },
+    { id: 8, nome: 'Óleo de Atração (Amor)', categoria: 'Óleos', preco: 'R$ 30,00', imagem: '/produtos/oleo-amor.jpeg', desc: 'Elixir com óleo essencial de Amêndoa para o chakra cardíaco.' },
+    { id: 9, nome: 'Óleo Alquímico Fortuna (Prosperidade)', categoria: 'Óleos', preco: 'R$ 30,00', imagem: '/produtos/oleo-prosperidade.png', desc: 'Infusiona0do com óleo essencial de Girasol com Alecrim, Louro e Canela,para atrair riqueza.' },
+    { id: 10, nome: 'Óleo Protetor Luz Áurica (Proteção)', categoria: 'Óleos', preco: 'R$ 30,00', imagem: '/produtos/oleo-protecao.jpg', desc: 'óleo de semente de Uva, Arruda, Salvia e Eucalipto, para selar a aura contra negatividade.' },
 
     // === PATUÁS ===
-    { id: 10, nome: 'Patuá Laços de Afeto (Amor)', categoria: 'Patuás', preco: 'R$ 32,00', imagem: '/produtos/patua-amor.jpeg', desc: 'Amuleto consagrado para harmonizar relacionamentos.' },
-    { id: 11, nome: 'Patuá Ímã de Ouro (Prosperidade)', categoria: 'Patuás', preco: 'R$ 32,00', imagem: '/produtos/patua-prosperidade.jpeg', desc: 'Contém sementes da abundância e cristais de citrino.' },
-    { id: 12, nome: 'Patuá Patuá de São Jorge (Proteção)', categoria: 'Patuás', preco: 'R$ 35,00', imagem: '/produtos/patua-protecao.jpeg', desc: 'Forte escudo contra o mau-olhado, inveja e perigos.' },
+    { id: 11, nome: 'Patuá Laços de Afeto (Amor)', categoria: 'Patuás', preco: 'R$ 25,00', imagem: '/produtos/patua-amor.jpeg', desc: 'Amuleto consagrado para harmonizar relacionamentos.' },
+    { id: 12, nome: 'Patuá Ímã de Ouro (Prosperidade)', categoria: 'Patuás', preco: 'R$ 25,00', imagem: '/produtos/patua-prosperidade.png', desc: 'Para atrair prosperidade e movimentar o fluxo financeiro.' },
+    { id: 13, nome: 'Patuá de blindagem (Proteção)', categoria: 'Patuás', preco: 'R$ 25,00', imagem: '/produtos/patua-protecao.jpg', desc: 'Forte escudo contra o mau-olhado, inveja e perigos.' },
 
     // === BANHOS ===
-    { id: 13, nome: 'Banho de Ervas Conexão (Amor)', categoria: 'Banhos', preco: 'R$ 22,00', imagem: '/produtos/banho-amor.jpeg', desc: 'Pétalas de rosa e malva para despertar a doçura e auto-estima.' },
-    { id: 14, nome: 'Banho de Ervas Abre Caminho (Prosperidade)', categoria: 'Banhos', preco: 'R$ 22,00', imagem: '/produtos/banho-prosperidade.jpeg', desc: 'Manjericão, louro e canela para atrair movimento financeiro.' },
-    { id: 15, nome: 'Banho de Descarrego Forte (Proteção)', categoria: 'Banhos', preco: 'R$ 24,00', imagem: '/produtos/banho-protecao.jpeg', desc: 'Aroeira, pinhão roxo e guiné para limpeza pesada.' },
+    { id: 14, nome: 'Banho de Ervas Conexão (Amor)', categoria: 'Banhos', preco: 'R$ 15,00', imagem: '/produtos/banho-amor.jpeg', desc: 'Hibísco, Artemisía e Manjericão, para despertar a doçura e auto-estima.' },
+    { id: 15, nome: 'Banho de Ervas Abre Caminho (Prosperidade)', categoria: 'Banhos', preco: 'R$ 15,00', imagem: '/produtos/banho-prosperidade.png', desc: 'Alecrim, louro e canela para atrair movimento financeiro.' },
+    { id: 16, nome: 'Banho de Descarrego Forte (Proteção)', categoria: 'Banhos', preco: 'R$ 15,00', imagem: '/produtos/banho-protecao.jpg', desc: 'Arruda, Salvia e Eucalipto para limpeza pesada.' },
 
     // === SAL RITUALÍSTICO ===
-    { id: 16, nome: 'Sal Rosa Amor Incondicional (Amor)', categoria: 'Sal Ritualístico', preco: 'R$ 28,00', imagem: '/produtos/sal-amor.jpeg', desc: 'Para escalda-pés relaxantes focado em restaurar o afeto.' },
-    { id: 17, nome: 'Sal de Banho Magnetismo (Prosperidade)', categoria: 'Sal Ritualístico', preco: 'R$ 28,00', imagem: '/produtos/sal-prosperidade.jpeg', desc: 'Sal marinho com calêndula focado na vibração do sucesso.' },
-    { id: 18, nome: 'Sal Negro de Bruxa (Proteção)', categoria: 'Sal Ritualístico', preco: 'R$ 30,00', imagem: '/produtos/sal-protecao.jpeg', desc: 'Poderoso composto ritualístico para banir e quebrar demandas.' },
+    { id: 17, nome: 'Sal Rosa Amor Incondicional (Amor)', categoria: 'Sal Ritualístico', preco: 'R$ 10,00', imagem: '/produtos/sal-amor.jpeg', desc: 'Para escalda-pés relaxantes focado em restaurar o afeto.' },
+    { id: 18, nome: 'Sal de Banho Magnetismo (Prosperidade)', categoria: 'Sal Ritualístico', preco: 'R$ 10,00', imagem: '/produtos/sal-prosperidade.png', desc: 'Focado na vibração do sucesso.' },
+    { id: 19, nome: 'Sal Negro de Bruxa (Proteção)', categoria: 'Sal Ritualístico', preco: 'R$ 10,00', imagem: '/produtos/sal-protecao.jpg', desc: 'Poderoso composto ritualístico para banir e quebrar demandas.' },
 
     // === KITS ===
-    { id: 19, nome: 'Kit Ritual Amor Sagrado (Amor)', categoria: 'Kits', preco: 'R$ 115,00', imagem: '/produtos/kit-amor.jpeg', desc: 'Vela, banho e cristal voltados ao autocuidado e amor.' },
-    { id: 20, nome: 'Kit Fluxo da Abundância (Prosperidade)', categoria: 'Kits', preco: 'R$ 120,00', imagem: '/produtos/kit-prosperidade.jpeg', desc: 'O ritual completo para girar a energia financeira do seu lar.' },
-    { id: 21, nome: 'Kit Portal da Proteção (Proteção)', categoria: 'Kits', preco: 'R$ 125,00', imagem: '/produtos/kit-protecao.jpeg', desc: 'Vela de arruda, defumador, sal ritualístico e patuá.' },
+    { id: 20, nome: 'Kit Ritual Amor Sagrado (Amor)', categoria: 'Kits', preco: 'R$ 110,00', imagem: '/produtos/kit-amor.jpeg', desc: 'Vela, Banho, Patuá, Chá, Óleo, Sal. Todos voltados a autocuidado e amor.' },
+    { id: 21, nome: 'Kit Fluxo da Abundância (Prosperidade)', categoria: 'Kits', preco: 'R$ 110,00', imagem: '/produtos/kit-prosperidade.png', desc: 'O ritual completo para girar a energia financeira do seu lar.' },
+    { id: 22, nome: 'Kit Portal da Proteção (Proteção)', categoria: 'Kits', preco: 'R$ 110,00', imagem: '/produtos/kit-protecao.jpg', desc: 'Vela de proteção, Banho, Sal Ritualístico, Chá, Óleo e Patuá.' },
   ];
 
   // Filtragem dos produtos baseado no clique do usuário
@@ -135,9 +137,16 @@ export default function Home() {
               
               <div className="mt-6 flex items-center justify-between pt-4 border-t border-zinc-900">
                 <span className="text-base font-sans font-medium text-white">{produto.preco}</span>
-                <button className="bg-transparent hover:bg-[#D4AF37] border border-[#D4AF37] text-[#D4AF37] hover:text-black font-sans font-medium text-xs uppercase tracking-wider px-4 py-2 rounded transition-all duration-300">
-                  Ver Detalhes
-                </button>
+                <a
+  href={`https://wa.me/5547097002521?text=${encodeURIComponent(
+    `Olá! Tenho interesse em ${produto.nome} (${produto.preco}).`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-transparent hover:bg-[#D4AF37] border border-[#D4AF37] text-[#D4AF37] hover:text-black font-sans font-medium text-xs uppercase tracking-wider px-4 py-2 rounded transition-all duration-300"
+>
+  Comprar
+</a>
               </div>
             </div>
           ))}
