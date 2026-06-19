@@ -217,4 +217,34 @@ export const PRODUTOS_MASTER = [
     descricao: 'A mais refinada experiência de alta magia botânica criada para movimentar o fluxo da abundância e sintonizar sua vida com o sucesso material. Este kit luxuoso...',
     detalhes: ['Inclui: 1 Banho, 1 Sal Amarelo, 1 Óleo Corporal, 1 Chá, 1 Patuá do Ouro e 1 Caixa de Madeira', 'Infundido com a fitoenergia solar de atração de riquezas', 'Edição artesanal e limitada']
   },
+
+  // --- PATUAS ---]
+
+   {
+    id: 801, // Próximo ID livre na categoria de patuás
+    nome: 'Patuá do Amor: Magnetismo e Amor Absoluto', // Exemplo com a Opção 1
+    categoria: 'patuas',
+    preco: 25.00, // Preço acessível e padronizado da linha
+    imagem: '/produtos/patua-amor.jpeg', // Nome exato do arquivo na sua pasta de fotos
+    descricao: 'Um patuá especializado para despertar o seu poder de atração, autoestima e brilho pessoal.',
+    detalhes: ['Contém ervas selecionadas', 'Artemisia, Hibisco e Manjericão verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+  },
+    {
+    id: 802, // Próximo ID livre na categoria de patuás
+    nome: 'Patuá da Proteção: Defesa e Blindagem', // Exemplo com a Opção 1
+    categoria: 'patuas',
+    preco: 25.00, // Preço acessível e padronizado da linha
+    imagem: '/produtos/patua-protecao.jpg', // Nome exato do arquivo na sua pasta de fotos
+    descricao: 'Um patuá especializado para proteger você e seu ambiente. ',
+    detalhes: ['Contém ervas escolhidas para fortalecer o campo energético', 'Arruda, Sálvia e Eucalipto verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+  },
+    {
+    id: 803, // Próximo ID livre na categoria de patuás
+    nome: 'Patuá de Prosperidade: Prosperidade e Triunfo', // Exemplo com a Opção 1
+    categoria: 'patuas',
+    preco: 25.00, // Preço acessível e padronizado da linha
+    imagem: '/produtos/patua-prosperidade.png', // Nome exato do arquivo na sua pasta de fotos
+    descricao: 'Um patuá especializado para atrair abundância e sucesso. ',
+    detalhes: ['Contém ervas escolhidas para fortalecer o campo energético', 'Louro, Alecrim e Canela', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+  },
 ];
