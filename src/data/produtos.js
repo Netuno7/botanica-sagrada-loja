@@ -9,11 +9,11 @@ export const CONFIG = {
 
 export const CATEGORIAS = [
   { id: 'todos', nome: 'Ver Tudo', icone: '✨', slogan: 'Todos os artefatos consagrados do nosso altar' },
-  { id: 'velas', nome: 'Velas Ritualísticas', icone: '🕯️', slogan: 'Elementos de fogo transmutador e intenção focada' },
-  { id: 'chas', nome: 'Chás Medicinais & Intuitivos', icone: '🫖', slogan: 'Blends de conexão interna e cura sutil' },
-  { id: 'oleos', nome: 'Óleos de Unção', icone: '🧪', slogan: 'Extratos lipossolúveis para ritos de passagem e proteção' },
-  { id: 'patuas', nome: 'Amuletos & Patuás', icone: '🧿', slogan: 'Escudos energéticos de ancoramento e blindagem' },
-  { id: 'banhos', nome: 'Banhos de Ervas Forte', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
+  { id: 'velas', nome: 'Velas Ritualísticas', icone: '🕯️', slogan: 'Velas criadas com intenção energética, unindo elementos botânicos e vibrações espirituais para rituais de amor, prosperidade, proteção e equilíbrio interior. Cada vela é um instrumento de transformação energética e conexão espiritual.' },
+  { id: 'chas', nome: 'Chás Ritualísticos', icone: '🫖', slogan: 'Blends de conexão interna e cura sutil' },
+  { id: 'oleos', nome: 'Óleos Ritualísticos', icone: '🧪', slogan: 'Extratos lipossolúveis para ritos de passagem e proteção' },
+  { id: 'patuas', nome: 'Patuás Ritualísticos', icone: '🧿', slogan: 'Escudos energéticos de ancoramento e blindagem' },
+  { id: 'banhos', nome: 'Banhos Ritualísticos', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
   { id: 'sal-ritualistico', nome: 'Sal Ritualístico', icone: '🧂', slogan: 'Purificação e equilíbrio energético' },
   { id: 'kits', nome: 'Kits Ritualísticos', icone: '🎁', slogan: 'Conjuntos completos para rituais e práticas espirituais' }
 ];
@@ -23,74 +23,74 @@ export const PRODUTOS_MASTER = [
   
    {
     id: 101, // Próximo ID livre na categoria de velas
-    nome: 'Vela Ritualística Afrodite: Magnetismo e Fogo Interno', // Exemplo com a Opção 1
+    nome: 'Vela de Amor: Magnetismo e Fogo Interno', // Exemplo com a Opção 1
     categoria: 'velas',
-    preco: 15.00, // Ajuste para o seu preço real de venda
+    preco: 14.99, // Ajuste para o seu preço real de venda
     imagem: '/produtos/vela-amor.png', // Nome exato do arquivo de imagem na sua pasta produtos
-    descricao: 'Feita artesanalmente com um blend de ceras vegetais e pavio de algodão puro, esta vela é consagrada para despertar o amor-próprio, o magnetismo pessoal...',
-    detalhes: ['Cera 100% vegetal e livre de parafina', 'Infundida com Hibisco e óleos consagrados', 'Tempo de queima aproximado: 36h']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, formato perfeito bem detalhado, esta vela é consagrada para despertar o amor-próprio, e magnetismo pessoal...',
+    detalhes: ['Tempo de queima estimado: 3h', 'Cor: Vermelho Amor intenso', 'Peso: 40g']
   
   },
   {
     id: 102, // Próximo ID livre na categoria de velas
-    nome: 'Vela Alquímica: Lavanda Pigmentada', // Exemplo com a Opção 1
+    nome: 'Vela Botânica: Lavanda Rosa', // Exemplo com a Opção 1
     categoria: 'velas',
-    preco: 30.00, // Ajuste para o seu preço de venda real
+    preco: 29.99, // Ajuste para o seu preço de venda real
     imagem: '/produtos/vela-lavanda-rosa.png', // Nome exato da foto na sua pasta
-    descricao: 'Feita artesanalmente com um blend nobre de ceras vegetais, esta vela une o poder calmante da Lavanda com a frequência regeneradora das Rosas. Sua queima lenta...',
-    detalhes: ['Cera 100% livre de parafina', 'Decorada com flores de lavanda e botões de rosa', 'Tempo de queima estimado: 36h']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela é consagrada para atrair o amor suave e promover a harmonia emocional...',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Rosa Suave', 'Peso: 120g', 'Essência: Lavanda']
   },
   
     {
     id: 103, // Próximo ID livre na categoria de velas
-    nome: 'Vela Botânica Calmaria: Lavanda Pura', // Exemplo com a Opção 1
+    nome: 'Vela Botânica: Lavanda Pura', // Exemplo com a Opção 1
     categoria: 'velas',
-    preco: 25.00, // Ajuste para o seu preço de venda real
+    preco: 29.99, // Ajuste para o seu preço de venda real
     imagem: '/produtos/vela-lavanda.png', // Nome exato do arquivo na sua pasta produtos
-    descricao: 'Derramada artesanalmente com cera 100% vegetal, esta vela traz a essência pura e pacífica da Lavanda Azul. Sua queima lenta e limpa espalha...',
-    detalhes: ['Cera vegetal livre de parafina', 'Infundida com flores de lavanda desidratadas', 'Tempo de queima aproximado: 36h']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela traz a paz e tranquilidade para o seu ambiente...',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Branco', 'Peso: 120g', 'Essência: Lavanda']
   },
   
    {
     id: 104, // Próximo ID livre na categoria de velas
-    nome: 'Vela Alquímica Ouro: Canela e Prosperidade', // Exemplo com a Opção 1
+    nome: 'Vela Botânica: Canela Prosperidade', // Exemplo com a Opção 1
     categoria: 'velas',
-    preco: 30.00, // Ajuste para o seu preço de venda real
+    preco: 29.99, // Ajuste para o seu preço de venda real
     imagem: '/produtos/vela-canela.png', // Nome exato do arquivo na sua pasta produtos
-    descricao: 'Feita artesanalmente com um blend nobre de ceras vegetais, esta vela une a força transmutadora do fogo ao magnetismo acelerador da Canela. Sua queima libera...',
-    detalhes: ['Cera 100% livre de parafina', 'Infundida com canela em pau', 'Tempo de queima estimado: 36h']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela movimenta o fluxo financeiro e promove a prosperidade para o seu ambiente...',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Laranja', 'Peso: 120g', 'Essência: Canela']
   },
 
   // --- CATEGORIA: CHÁS ---
   {
     
     id: 201, // Próximo ID livre na categoria de chás
-    nome: 'Blend de Ervas Poção de Vênus: Amor e Magnetismo', // Exemplo com a Opção 1
+    nome: 'Blend de Ervas Naturais: Chá de Amor e Autoestima', // Exemplo com a Opção 1
     categoria: 'chas',
-    preco: 10.00, // Ajuste para o seu preço real de venda
+    preco: 9.99, // Ajuste para o seu preço real de venda
     imagem: '/produtos/cha-amor.jpeg', // Nome exato do arquivo na sua pasta de fotos
-    descricao: 'Uma infusão mágica e aromática desenvolvida para sintonizar o seu ser com a frequência vibracional do afeto e da autoestima. A cor rubi intensa do Hibisco...',
-    detalhes: ['Flores e frutas 100% desidratadas', 'Livre de corantes ou aromatizantes artificiais', 'Rende aproximadamente 5 xícaras']
+    descricao: 'Uma infusão de ervas naurais desenvolvida para despertar a sua autoestima e confiança...',
+    detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Hibisco, Artemísia, Manjericão', 'Rende aproximadamente 3 xícaras']
   },
   
  {
     id: 202, // Próximo ID livre na categoria de chás
-    nome: 'Blend de Ervas Ouro Solar: Prosperidade e Foco', // Exemplo com a Opção 1
+    nome: 'Blend de Ervas Naturais: Chá de Prosperidade e Abundância', // Exemplo com a Opção 1
     categoria: 'chas',
-    preco: 10.00, // Ajuste para o seu preço real de venda
+    preco: 9.99, // Ajuste para o seu preço real de venda
     imagem: '/produtos/cha-prosperidade.png', // Nome exato do arquivo de imagem na sua pasta produtos
-    descricao: 'Uma infusão estimulante e aromática criada para elevar o seu padrão vibratório e sintonizar sua mente com o fluxo da abundância. A Canela em lascas...',
-    detalhes: ['Contém Canela, Alecrim, Louro', 'Livre de conservantes ou essências artificiais', 'Perfeito para tomar no início do dia ou de novos projetos']
+    descricao: 'Uma infusão de ervas naturais criada para elevar o seu padrão vibratório e sintonizar sua mente com o fluxo da abundância e prosperidade...',
+    detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Canela, Alecrim, Louro', 'Rende aproximadamente 3 xícaras']
   },
 
   {
     id: 203, // Próximo ID livre na categoria de chás
-    nome: 'Blend de Ervas Escudo Astral: Proteção e Defesa', // Exemplo com a Opção 1
+    nome: 'Blend de Ervas Naturais: Chá de Proteção e Defesa', // Exemplo com a Opção 1
     categoria: 'chas',
-    preco: 10.00, // Ajuste para o seu preço de venda real
+    preco: 9.99, // Ajuste para o seu preço de venda real
     imagem: '/produtos/cha-protecao.jpg', // Nome exato do arquivo na sua pasta de fotos
-    descricao: 'Uma poderosa infusão ritualística criada para purificar o espírito de dentro para fora e blindar o seu campo magnético contra energias densas. Este blend...',
-    detalhes: ['Ingredientes 100% seguros para ingestão', 'Fitoenergia de corte e blindagem áurica', 'Rende aproximadamente 10 a 12 xícaras']
+    descricao: 'Uma poderosa infusão de ervas naturais criada para purificar o espírito de dentro para fora e blindar o seu campo magnético contra energias densas...',
+    detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Arruda, Sálvia, Eucalipto', 'Rende aproximadamente 3 xícaras']
   },
   
 
@@ -98,12 +98,12 @@ export const PRODUTOS_MASTER = [
   
    {
     id: 301, // Próximo ID livre na categoria de óleos
-    nome: 'Óleo Alquímico Ouro Solar: Prosperidade e Foco', // Exemplo com a Opção 1
+    nome: 'Óleo botânico: Prosperidade e Abundância', // Exemplo com a Opção 1
     categoria: 'oleos',
     preco: 35.00, // Ajuste para o seu preço de venda
     imagem: '/produtos/oleo-prosperidade.png', // Nome exato do arquivo na sua pasta
     descricao: 'Uma poderosa poção de alta frequência vibracional, formulada em uma base pura de Óleo Natural de Girassol — a planta que carrega a própria energia do Sol...',
-    detalhes: ['Contém Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais', 'Perfeito para tomar no início do dia ou de novos projetos']
+    detalhes: ['Peso: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais', 'Perfeito para tomar no início do dia ou de novos projetos']
   },
   
    {
@@ -129,28 +129,28 @@ export const PRODUTOS_MASTER = [
 
   // --- CATEGORIA: BANHOS ---
   {
-    id: 503,
-    nome: 'Banho de Ervas Florescer do Amor e Magnetismo',
+    id: 403,
+    nome: 'Banho Ervas Naturais: Amor e Magnetismo',
     categoria: 'banhos',
-    preco: 15.00,
+    preco: 14.99,
     imagem: '/produtos/banho-amor.jpeg',
-    descricao: 'Uma alquimia poderosa desenvolvida para despertar o amor-próprio e o poder de atração. A intensidade do Hibisco atua como um imã magnético para a paixão, enquanto a Artemísia sintoniza a intuição e a energia lunar. Finalizado com o Manjericão, este banho harmoniza a aura, abrindo os caminhos do coração com doçura, brilho pessoal e profunda autoconfiança.',
-    detalhes: ['Contém Hibisco, Artemísia e Manjericão', '30g Que rende até 2 banhos intensos', 'Ideal para atração amorosa e fortalecimento do amor-próprio']
+    descricao: 'Uma mistura poderosa desenvolvida para despertar o amor-próprio e o poder de atração. A intensidade do Hibisco atua como um imã magnético para a paixão, enquanto a Artemísia sintoniza a intuição e a energia lunar. Finalizado com o Manjericão, este banho harmoniza a aura, abrindo os caminhos do coração...',
+    detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Hibisco, Artemísia e Manjericão']
   },
   {
-    id: 504,
+    id: 404,
     nome: 'Banho Sagrado Alquimia da Prosperidade',
     categoria: 'banhos',
-    preco: 15.00,
+    preco: 14.99,
     imagem: '/produtos/banho-prosperidade.png',
     descricao: 'Desperte o fluxo de abundância que já existe no universo direto para a sua vida. A sinergia fitoenergética entre o Alecrim, a Canela e o Louro atua limpando as memórias de escassez da aura e ancorando uma vibração de merecimento, brilho pessoal e fartura. Sinta o aroma do sucesso envolver o seu corpo e prepare-se para colher os frutos da sua colheita.',
     detalhes: ['Ervas selecionadas e consagradas', '30g Que rende até 2 banhos intensos', 'Frequência de abertura e atração material']
   },
   {
-    id: 505, // Próximo ID livre da sua lista de banhos
+    id: 405, // Próximo ID livre da sua lista de banhos
     nome: 'Banho Escudo Astral para Proteção e Blindagem', // Exemplo com a Opção 1
     categoria: 'banhos',
-    preco: 15.00, // Ajuste para o seu preço de venda
+    preco: 14.99, // Ajuste para o seu preço de venda
     imagem: '/produtos/banho-protecao.jpg', // Nome exato do arquivo na sua pasta de fotos
     descricao: 'Uma poderosa alquimia de corte e banimento desenvolvida para purificar a alma e blindar o seu campo magnético contra energias densas...',
     detalhes: ['Contém Arruda, Sálvia e Eucalipto', '30g Que rende até 2 banhos intensos', 'Ideal para descarrego e proteção diária']
@@ -161,7 +161,7 @@ export const PRODUTOS_MASTER = [
     id: 601, // Próximo ID livre na sua lista
     nome: 'Sal Alquímico Ouro Solar: Prosperidade e Vitória', // Exemplo com a Opção 1
     categoria: 'sal-ritualistico',
-    preco: 10.00, // Preço definido por você
+    preco: 9.99, // Preço definido por você
     imagem: '/produtos/sal-prosperidade.png', // Nome exato do arquivo na sua pasta
     descricao: 'Uma alquimia potente e vibrante desenvolvida para movimentar a energia financeira e atrair o sucesso material. Este sal marinho purificador é imantado na cor amarela...',
     detalhes: ['Contém Louro, Canela e Alecrim verdadeiros', 'Potencializado na cor da riqueza e do Sol', 'Rende até 2 rituais de magnetismo']
@@ -171,7 +171,7 @@ export const PRODUTOS_MASTER = [
     id: 602, // Próximo ID livre na categoria de sais
     nome: 'Sal Alquímico Fogo de Vênus: Amor e Magnetismo', // Exemplo com a Opção 1
     categoria: 'sal-ritualistico',
-    preco: 10.00, // Mantendo o preço acessível da linha de sais
+    preco: 9.99, // Mantendo o preço acessível da linha de sais
     imagem: '/produtos/sal-amor.jpeg', // Nome exato do arquivo na sua pasta
     descricao: 'Uma alquimia intensa e envolvente criada para despertar o amor-próprio, o brilho pessoal e o poder de sedução. Este sal marinho purificador é imantado na cor vermelha...',
     detalhes: ['Contém Hibisco, Artemísia e Manjericão verdadeiros', 'Potencializado na cor do fogo e da paixão', 'Rende até 2 rituais de autoestima e poder pessoal']
@@ -181,7 +181,7 @@ export const PRODUTOS_MASTER = [
     id: 603, // Próximo ID livre na categoria de sais
     nome: 'Sal Alquímico Escudo Negro: Proteção e Banimento', // Exemplo com a Opção 1
     categoria: 'sal-ritualistico',
-    preco: 10.00, // Preço acessível e padronizado da linha
+    preco: 9.99, // Preço acessível e padronizado da linha
     imagem: '/produtos/sal-protecao.jpg', // Nome exato do arquivo na sua pasta de fotos
     descricao: 'Uma alquimia de corte pesado desenvolvida para purificar, descarregar e blindar o seu campo magnético. Este sal marinho purificador é imantado na cor negra...',
     detalhes: ['Contém Arruda, Sálvia e Eucalipto verdadeiros', 'Potencializado na cor do banimento e da blindagem', 'Perfeito para escalda-pés de descarrego ou proteção do lar']

@@ -28,30 +28,31 @@ export default function ProdutoCard({ produto, onAdicionar, onVisualizar, moeda 
           </p>
         </div>
 
-        {/* Rodapé Interno do Card */}
-        <div className="flex items-center justify-between mt-4 pt-3 border-t border-neutral-900">
+        {/* Rodapé Interno do Card - Informações de Preço */}
+        <div className="mt-4 pt-3 border-t border-neutral-900 flex justify-between items-end">
           <div>
-            <span className="text-[10px] text-neutral-500 block uppercase font-bold">Artefato</span>
+            <span className="text-[10px] text-neutral-500 block uppercase font-bold">Produto</span>
             <span className="text-base text-amber-300 font-bold">{moeda} {produto.preco.toFixed(2)}</span>
           </div>
+        </div>
+
+        {/* Botões de Ação Empilhados */}
+        <div className="flex flex-col gap-2 mt-3">
+          <button 
+            type="button"
+            onClick={() => onVisualizar(produto.id)}
+            className="w-full py-2 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 text-xs uppercase tracking-wider rounded-xl transition duration-300"
+          >
+            Ver Produto
+          </button>
           
-          <div className="flex items-center gap-1.5">
-            <button 
-              type="button"
-              onClick={() => onVisualizar(produto.id)}
-              className="p-2 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-400 hover:text-neutral-200 rounded-xl text-xs transition"
-              title="Ver detalhes completos"
-            >
-              👁️
-            </button>
-            <button 
-              type="button"
-              onClick={() => onAdicionar(produto)}
-              className="px-3.5 py-2 bg-purple-900 hover:bg-purple-800 active:scale-95 text-white text-xs font-bold rounded-xl transition shadow-md shadow-purple-950/40"
-            >
-              Adicionar
-            </button>
-          </div>
+          <button 
+            type="button"
+            onClick={() => onAdicionar(produto)}
+            className="w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md shadow-amber-950/20 active:scale-[0.98]"
+          >
+            Adicionar Produto
+          </button>
         </div>
       </div>
 
