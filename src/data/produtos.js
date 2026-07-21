@@ -8,14 +8,15 @@ export const CONFIG = {
 };
 
 export const CATEGORIAS = [
-  { id: 'todos', nome: 'Ver Tudo', icone: '✨', slogan: 'Todos os artefatos consagrados do nosso altar' },
-  { id: 'velas', nome: 'Velas Ritualísticas', icone: '🕯️', slogan: 'Velas criadas com intenção energética, unindo elementos botânicos e vibrações espirituais para rituais de amor, prosperidade, proteção e equilíbrio interior. Cada vela é um instrumento de transformação energética e conexão espiritual.' },
-  { id: 'chas', nome: 'Chás Ritualísticos', icone: '🫖', slogan: 'Blends de conexão interna e cura sutil' },
-  { id: 'oleos', nome: 'Óleos Ritualísticos', icone: '🧪', slogan: 'Extratos lipossolúveis para ritos de passagem e proteção' },
-  { id: 'patuas', nome: 'Patuás Ritualísticos', icone: '🧿', slogan: 'Escudos energéticos de ancoramento e blindagem' },
-  { id: 'banhos', nome: 'Banhos Ritualísticos', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
+  { id: 'todos', nome: 'Ver Tudo', icone: '✨', slogan: 'Explore todos os produtos da nossa loja.' },
+  { id: 'velas', nome: 'Velas', icone: '🕯️', slogan: 'Velas criadas com intenção energética.' },
+  { id: 'chas', nome: 'Chás', icone: '🫖', slogan: 'Blends de conexão interna e cura sutil' },
+  { id: 'oleos', nome: 'Óleos', icone: '🧪', slogan: 'Extratos lipossolúveis para ritos de passagem e proteção' },
+  { id: 'patuas', nome: 'Patuás', icone: '🧿', slogan: 'Escudos energéticos de ancoramento e blindagem' },
+  { id: 'banhos', nome: 'Banhos', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
   { id: 'sal-ritualistico', nome: 'Sal Ritualístico', icone: '🧂', slogan: 'Purificação e equilíbrio energético' },
-  { id: 'kits', nome: 'Kits Ritualísticos', icone: '🎁', slogan: 'Conjuntos completos para rituais e práticas espirituais' }
+  { id: 'kits', nome: 'Kits Ritualísticos', icone: '🎁', slogan: 'Conjuntos completos para rituais e práticas espirituais' },
+  { id: 'guias', nome: 'Guias E Japamalas  ', icone: '📚', slogan: 'Recursos para profundizar sua prática espiritual' }
 ];
 
 export const PRODUTOS_MASTER = [
@@ -100,7 +101,7 @@ export const PRODUTOS_MASTER = [
     preco: 35.00,
     imagem: '/produtos/oleo-prosperidade.png',
     descricao: 'Uma poderosa poção de alta frequência vibracional, formulada em uma base pura de Óleo Natural de Girassol — a planta que carrega a própria energia do Sol.',
-    detalhes: ['Peso: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais', 'Perfeito para tomar no início do dia ou de novos projetos']
+    detalhes: ['Peso: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais']
   },
   {
     id: 302,
@@ -243,5 +244,19 @@ export const PRODUTOS_MASTER = [
     imagem: '/produtos/patua-prosperidade.png',
     descricao: 'Um patuá especializado e imantado para atrair caminhos abertos, abundância e sucesso financeiro.',
     detalhes: ['Contém ervas escolhidas para atrair fartura', 'Louro, Alecrim e Canela legítimos', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
-  }
+  },
+
+  // ==========================================
+  // --- CATEGORIA: GUIAS E JAPAMALAS ---
+  // ==========================================
+  {
+    id: 901,
+    nome: 'Guia Pomba Gira: Conexão e Magia Feminina',
+    categoria: 'guias',
+    preco: 149.00,
+    imagem: '/produtos/guia-pomba-gira-1.png',
+    descricao: 'Um guia especializado para fortalecer a conexão com a energia feminina e desbloquear o poder da magia.',
+    detalhes: ['Comprimento: 90 cm', 'Material: Cristal Austríaco', 'Pingente Numero 7 + Garfo + Firma']
+  },
+
 ];

@@ -1,13 +1,7 @@
 // src/App.jsx
 import React, { useState, useMemo, useEffect } from 'react';
-// Importação isolada dos seus dados reais (evita o erro de HMR / Fast Refresh)
+// Importação isolada dos seus dados reais
 import { CONFIG, CATEGORIAS, PRODUTOS_MASTER } from './data/produtos';
-
-const DEPOIMENTOS = [
-  { id: 1, nome: "Clarice Albuquerque", texto: "O banho de Amor e Magnetismo é maravilhoso. O cuidado com as folhas inteiras demonstra o respeito da marca pela natureza.", local: "São Paulo - SP", estrelas: 5 },
-  { id: 2, nome: "Matheus Dorneles", texto: "A vela de lavanda pura mudou a energia do meu ambiente. O aroma é natural e traz uma paz imediata.", local: "Curitiba - PR", estrelas: 5 },
-  { id: 3, nome: "Helena Cavalcanti", texto: "Os óleos ritualísticos possuem uma textura incrível. Sinto o campo blindado e a mente calma após o uso nos chakras.", local: "Rio de Janeiro - RJ", estrelas: 5 }
-];
 
 const CUPONS_VALIDOS = {
   'BOTANICA10': 0.10, 
@@ -190,7 +184,6 @@ export default function App() {
         <nav className="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
           <button onClick={() => { setAbaAtiva('loja'); setEtapaCheckout('carrinho'); }} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'loja' ? 'border-[#D4AF37]' : 'border-transparent text-stone-400'}`}>Sinergias</button>
           <button onClick={() => setAbaAtiva('sobre')} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'sobre' ? 'border-[#D4AF37]' : 'border-transparent text-stone-400'}`}>Nossa Tradição</button>
-          <button onClick={() => setAbaAtiva('depoimentos')} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'depoimentos' ? 'border-[#D4AF37]' : 'border-transparent text-stone-400'}`}>Relatos</button>
           <button onClick={() => setAbaAtiva('carrinho')} className="flex items-center gap-3 px-6 py-3 rounded-full text-xs font-bold tracking-[0.18em] uppercase border bg-white border-[#D6CFC2]">
             <span>Sacola ({totalItensNoCarrinho})</span>
           </button>
@@ -243,18 +236,6 @@ export default function App() {
           <div className="max-w-3xl mx-auto bg-white border border-[#E3DDD1] rounded-2xl p-8 md:p-12 text-left">
             <h2 className="font-serif text-2xl text-center mb-6">{CONFIG.NOME_LOJA}</h2>
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light mb-4">Nascemos da profunda conexão com o reino vegetal e a tradição ervanária, trazendo a cura sutil e a purificação energética para rituais diários através de elementos feitos de forma 100% artesanal, natural e intencionada.</p>
-          </div>
-        )}
-
-        {/* DEPOIMENTOS */}
-        {abaAtiva === 'depoimentos' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {DEPOIMENTOS.map(dep => (
-              <div key={dep.id} className="bg-white border border-[#E3DDD1] rounded-2xl p-6 text-left flex flex-col justify-between">
-                <p className="text-xs text-stone-600 italic font-light">"{dep.texto}"</p>
-                <h5 className="font-serif text-xs font-bold mt-4 uppercase tracking-wider text-[#2C3E2B]">{dep.nome} <span className="text-stone-400 text-[10px] block font-sans">{dep.local}</span></h5>
-              </div>
-            ))}
           </div>
         )}
 
