@@ -4,8 +4,9 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CONFIG, CATEGORIAS, PRODUTOS_MASTER } from './data/produtos';
 
 const CUPONS_VALIDOS = {
-  'BOTANICA10': 0.10, 
-  'SAGRADO15': 0.15 
+  'VENUS': 0.15,    // 15% de desconto
+  'NETUNO': 0.15,   // 15% de desconto
+  'BELAYMA': 0.15,  // 15% de desconto
 };
 
 const VALOR_MINIMO_BRINDE = 200.00;
@@ -126,7 +127,7 @@ export default function App() {
     const cupomTratado = codigoCupom.trim().toUpperCase();
     if (CUPONS_VALIDOS.hasOwnProperty(cupomTratado)) {
       setCupomAplicado({ nome: cupomTratado, valor: CUPONS_VALIDOS[cupomTratado], tipo: 'porcentagem' });
-      dispararNotificacao(`✨ Cupom "${cupomTratado}" ativado.`);
+      dispararNotificacao(`✨ Cupom "${cupomTratado}" ativado (${CUPONS_VALIDOS[cupomTratado] * 100}% OFF).`);
     } else {
       setErroCupom('Código botânico inválido.');
     }
@@ -159,7 +160,7 @@ export default function App() {
     if (ganhaBrindeExtra) m += `🎁 *CORTESIA:* 1x _Amostra de Alquimia de Estúdio_\n`;
     m += `\n🚚 *ENDEREÇO*\n• ${endereco.rua}, Nº ${endereco.numero} - ${endereco.bairro}\n• ${endereco.cidade}/${endereco.estado} - CEP: ${cep}\n\n`;
     m += `💰 *EXTRATO*\n• Produtos: ${CONFIG.MOEDA} ${totalGeralProdutos.toFixed(2)}\n• Frete: ${CONFIG.MOEDA} ${frete.toFixed(2)}\n`;
-    if (cupomAplicado) m += `• Desconto: -${CONFIG.MOEDA} ${valorDescontoCupom.toFixed(2)}\n`;
+    if (cupomAplicado) m += `• Desconto (${cupomAplicado.nome}): -${CONFIG.MOEDA} ${valorDescontoCupom.toFixed(2)}\n`;
     m += `• *TOTAL FINAL:* ${CONFIG.MOEDA} ${totalFinalComDescontosEFrete.toFixed(2)}\n`;
     window.open(`https://api.whatsapp.com/send?phone=${CONFIG.TELEFONE_WHATSAPP}&text=${encodeURIComponent(m)}`, '_blank');
     atualizarEPersistirCarrinho([]);
@@ -263,9 +264,27 @@ export default function App() {
                     </div>
                   ))
                 )}
+
                 {carrinho.length > 0 && (
                   <div className="border-t pt-4 flex flex-col gap-3 text-xs">
-                    <div className="flex justify-between font-bold text-[#2C3E2B]"><span>Total em Produtos:</span><span>{CONFIG.MOEDA} {totalGeralProdutos.toFixed(2)}</span></div>
+                    {/* CAMPO DE CUPOM */}
+                    <form onSubmit={aplicarCupomDesconto} className="flex gap-2">
+                      <input 
+                        type="text" 
+                        placeholder="Possui cupom?" 
+                        value={codigoCupom} 
+                        onChange={e => setCodigoCupom(e.target.value)} 
+                        className="border p-2 rounded text-xs uppercase flex-1" 
+                      />
+                      <button type="submit" className="bg-[#2C3E2B] text-white px-4 py-2 rounded text-xs font-bold uppercase">Aplicar</button>
+                    </form>
+                    {erroCupom && <p className="text-[10px] text-red-600 font-bold">{erroCupom}</p>}
+                    {cupomAplicado && <p className="text-[10px] text-emerald-700 font-bold">✨ Cupom {cupomAplicado.nome} ativado (-15%)</p>}
+
+                    <div className="flex justify-between font-bold text-[#2C3E2B]"><span>Subtotal:</span><span>{CONFIG.MOEDA} {totalGeralProdutos.toFixed(2)}</span></div>
+                    {cupomAplicado && (
+                      <div className="flex justify-between text-emerald-700 font-bold"><span>Desconto:</span><span>-{CONFIG.MOEDA} {valorDescontoCupom.toFixed(2)}</span></div>
+                    )}
                     <button onClick={() => setEtapaCheckout('dados')} className="w-full py-3 bg-[#2C3E2B] text-white text-xs font-bold uppercase tracking-widest rounded-lg">Avançar para Despacho</button>
                   </div>
                 )}
