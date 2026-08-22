@@ -220,7 +220,7 @@ export const PRODUTOS_MASTER = [
     nome: 'Kit 10 Ervas Naturais: Limpeza, Proteção e Purificação',
     categoria: 'kits',
     preco: 30.00,
-    imagem: '/produtos/kit-10-ervas.jpg',
+    imagem: '/produtos/kit-ervas.jpg',
     descricao: 'Um kit com 10 ervas naturais selecionadas para limpeza, proteção e purificação do ambiente. Acompanha caixa de madeira de estúdio. Hibisco, Artemísia, Manjericão, Arruda, Sálvia, Eucalipto, Alecrim, Canela em po e em pau, e Louro.',
     detalhes: ['Contem: 10 Ervas', 'Caixa De Madeira', 'Peso: 5g Cada Erva']
   },
