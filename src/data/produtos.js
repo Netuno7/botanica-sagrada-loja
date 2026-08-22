@@ -16,7 +16,7 @@ export const CATEGORIAS = [
   { id: 'banhos', nome: 'Banhos', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
   { id: 'sal-ritualistico', nome: 'Sal Ritualístico', icone: '🧂', slogan: 'Purificação e equilíbrio energético' },
   { id: 'kits', nome: 'Kits Ritualísticos', icone: '🎁', slogan: 'Conjuntos completos para rituais e práticas espirituais' },
-  { id: 'guias', nome: 'Guias E Japamalas  ', icone: '📚', slogan: 'Recursos para profundizar sua prática espiritual' }
+  { id: 'guias', nome: 'Guias E Japamalas', icone: '📿', slogan: 'Recursos para aprofundar sua prática espiritual' }
 ];
 
 export const PRODUTOS_MASTER = [
@@ -98,7 +98,7 @@ export const PRODUTOS_MASTER = [
     id: 301,
     nome: 'Óleo Botânico: Sucesso e Riqueza',
     categoria: 'oleos',
-    preco: 35.00,
+    preco: 15.00,
     imagem: '/produtos/oleo-prosperidade.png',
     descricao: 'Uma poderosa poção de alta frequência vibracional, formulada em uma base pura de Óleo Natural de Girassol — a planta que carrega a própria energia do Sol.',
     detalhes: ['Peso: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais']
@@ -107,7 +107,7 @@ export const PRODUTOS_MASTER = [
     id: 302,
     nome: 'Óleo Botânico: Amor e Atração',
     categoria: 'oleos',
-    preco: 35.00,
+    preco: 15.00,
     imagem: '/produtos/oleo-amor.jpeg',
     descricao: 'Uma poção corporal luxuosa, formulada com uma base pura de Óleo de Amêndoas Doces e infundida com ervas de alta potência magnética. O Hibisco atua despertando o fogo interno.',
     detalhes: ['Base 100% natural de Amêndoas Doces', 'Infundido com ervas verdadeiras por ciclos lunares', 'Ideal para usar pós-banho ou em massagens']
@@ -116,7 +116,7 @@ export const PRODUTOS_MASTER = [
     id: 303,
     nome: 'Óleo Botânico: Defesa e Blindagem',
     categoria: 'oleos',
-    preco: 35.00,
+    preco: 15.00,
     imagem: '/produtos/oleo-protecao.jpg',
     descricao: 'Um poderoso óleo ritualístico de alta proteção, formulado em uma base leve e regeneradora de Óleo de Semente de Uva. Este elixir atua como um verdadeiro escudo invisível.',
     detalhes: ['Base 100% natural de Semente de Uva', 'Macerado com Arruda, Sálvia e Eucalipto legítimos', 'Ideal para aplicar nos pulsos, nuca e chakras antes de sair de casa']
@@ -129,7 +129,7 @@ export const PRODUTOS_MASTER = [
     id: 403,
     nome: 'Banho Botânico: Amor e Magnetismo',
     categoria: 'banhos',
-    preco: 15.00,
+    preco: 10.00,
     imagem: '/produtos/banho-amor.jpeg',
     descricao: 'Uma mistura poderosa desenvolvida para despertar o amor-próprio e o poder da atração.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Hibisco, Artemísia e Manjericão']
@@ -138,7 +138,7 @@ export const PRODUTOS_MASTER = [
     id: 404,
     nome: 'Banho Botânico: Prosperidade e Florescimento',
     categoria: 'banhos',
-    preco: 15.00,
+    preco: 10.00,
     imagem: '/produtos/banho-prosperidade.png',
     descricao: 'Uma mistura poderosa desenvolvida para movimentar o fluxo da abundância e sintonizar sua vida com o sucesso material.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Alecrim, Canela e Louro']
@@ -147,7 +147,7 @@ export const PRODUTOS_MASTER = [
     id: 405,
     nome: 'Banho Botânico: Proteção e Renovação',
     categoria: 'banhos',
-    preco: 15.00,
+    preco: 10.00,
     imagem: '/produtos/banho-protecao.jpg',
     descricao: 'Uma mistura poderosa desenvolvida para purificar, descarregar e blindar o seu campo magnético.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Arruda, Sálvia e Eucalipto']
@@ -162,7 +162,7 @@ export const PRODUTOS_MASTER = [
     categoria: 'sal-ritualistico',
     preco: 10.00,
     imagem: '/produtos/sal-prosperidade.png',
-    descricao: 'Uma alquimia potente e vibrantee desenvolvida para movimentar a energia financeira e atrair o sucesso material. Este sal marinho purificador é imantado na cor amarela com ervas.',
+    descricao: 'Uma alquimia potente e vibrante desenvolvida para movimentar a energia financeira e atrair o sucesso material. Este sal marinho purificador é imantado na cor amarela com ervas.',
     detalhes: ['Peso: 100g', 'Cor: Amarelo', 'Ervas: Louro, Canela e Alecrim']
   },
   {
@@ -191,7 +191,7 @@ export const PRODUTOS_MASTER = [
     id: 701,
     nome: 'Kit Ritual Completo: Magnetismo e Amor Absoluto',
     categoria: 'kits',
-    preco: 110.00,
+    preco: 60.00,
     imagem: '/produtos/kit-amor.jpeg',
     descricao: 'Um kit completo para despertar o seu poder de atração, autoestima e brilho pessoal. Contém 5 itens selecionados dispostos em uma linda caixa de madeira reutilizável.',
     detalhes: ['Banho Botânico: Amor e Magnetismo', 'Óleo Botânico: Amor e Atração', 'Sal Ritualístico: Amor e Sedução', 'Blend Natural: Chá de Amor e Autoestima', 'Patuá do Amor: Magnetismo e Desejo']
@@ -200,7 +200,7 @@ export const PRODUTOS_MASTER = [
     id: 702,
     nome: 'Kit Ritual Completo: Limpeza e Proteção',
     categoria: 'kits',
-    preco: 110.00,
+    preco: 60.00,
     imagem: '/produtos/kit-protecao.jpg',
     descricao: 'Um kit completo para proteger você e seu ambiente de energias densas. Contém 5 itens essenciais acompanhados de uma caixa de madeira reutilizável.',
     detalhes: ['Banho Botânico: Proteção e Renovação', 'Óleo Botânico: Defesa e Blindagem', 'Sal Ritualístico: Limpeza e Banimento', 'Blend Natural: Chá de Purificação e Fortalecimento', 'Patuá da Proteção: Barreira e Escudo']
@@ -209,10 +209,20 @@ export const PRODUTOS_MASTER = [
     id: 703,
     nome: 'Kit Ritual Completo: Prosperidade e Abundância',
     categoria: 'kits',
-    preco: 110.00,
+    preco: 60.00,
     imagem: '/produtos/kit-prosperidade.png',
     descricao: 'Um kit completo meticulosamente preparado para atrair abundância, sucesso e movimentação material. Acompanha caixa de madeira de estúdio.',
     detalhes: ['Banho Botânico: Prosperidade e Florescimento', 'Óleo Botânico: Sucesso e Riqueza', 'Sal Ritualístico: Fertilidade e Fortuna', 'Blend Natural: Chá de Frutificação e Bonança', 'Patuá de Prosperidade: Conquista e Triunfo']
+  },
+
+   {
+    id: 704,
+    nome: 'Kit 10 Ervas Naturais: Limpeza, Proteção e Purificação',
+    categoria: 'kits',
+    preco: 30.00,
+    imagem: '/produtos/kit-10-ervas.jpg',
+    descricao: 'Um kit com 10 ervas naturais selecionadas para limpeza, proteção e purificação do ambiente. Acompanha caixa de madeira de estúdio. Hibisco, Artemísia, Manjericão, Arruda, Sálvia, Eucalipto, Alecrim, Canela em po e em pau, e Louro.',
+    detalhes: ['Contem: 10 Ervas', 'Caixa De Madeira', 'Peso: 5g Cada Erva']
   },
 
   // ==========================================
@@ -222,7 +232,7 @@ export const PRODUTOS_MASTER = [
     id: 801,
     nome: 'Patuá do Amor: Magnetismo e Amor Absoluto',
     categoria: 'patuas',
-    preco: 25.00,
+    preco: 15.00,
     imagem: '/produtos/patua-amor.jpeg',
     descricao: 'Um patuá especializado para despertar o seu poder de atração, autoestima e brilho pessoal.',
     detalhes: ['Contém ervas selecionadas', 'Artemísia, Hibisco e Manjericão verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
@@ -231,7 +241,7 @@ export const PRODUTOS_MASTER = [
     id: 802,
     nome: 'Patuá da Proteção: Barreira e Escudo',
     categoria: 'patuas',
-    preco: 25.00,
+    preco: 15.00,
     imagem: '/produtos/patua-protecao.jpg',
     descricao: 'Um patuá especializado para proteger seu campo áurico e o seu ambiente contra energias nocivas.',
     detalhes: ['Contém ervas escolhidas para fortalecer o campo energético', 'Arruda, Sálvia e Eucalipto verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
@@ -240,7 +250,7 @@ export const PRODUTOS_MASTER = [
     id: 803,
     nome: 'Patuá de Prosperidade: Conquista e Triunfo',
     categoria: 'patuas',
-    preco: 25.00,
+    preco: 15.00,
     imagem: '/produtos/patua-prosperidade.png',
     descricao: 'Um patuá especializado e imantado para atrair caminhos abertos, abundância e sucesso financeiro.',
     detalhes: ['Contém ervas escolhidas para atrair fartura', 'Louro, Alecrim e Canela legítimos', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
@@ -253,10 +263,9 @@ export const PRODUTOS_MASTER = [
     id: 901,
     nome: 'Guia Pomba Gira: Conexão e Magia Feminina',
     categoria: 'guias',
-    preco: 149.00,
+    preco: 100.00,
     imagem: '/produtos/guia-pomba-gira-1.png',
     descricao: 'Um guia especializado para fortalecer a conexão com a energia feminina e desbloquear o poder da magia.',
     detalhes: ['Comprimento: 90 cm', 'Material: Cristal Austríaco', 'Pingente Numero 7 + Garfo + Firma']
-  },
-
+  }
 ];
