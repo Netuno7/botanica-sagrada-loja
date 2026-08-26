@@ -220,7 +220,7 @@ export const PRODUTOS_MASTER = [
     categoria: 'kits',
     preco: 30.00,
     imagem: '/produtos/kit-ervas.jpg',
-    descricao: 'Uma coleção artesanal com 10 ervas naturais puras para você criar suas próprias infusões, banhos e defumações. Acompanha caixinha de madeira.',
+    descricao: 'Uma coleção artesanal com 10 ervas naturais puras...',
     detalhes: ['Contém: 10 Ervas selecionadas', 'Caixa de Madeira Artesanal', 'Peso: 5g cada porção']
   },
 
