@@ -3,20 +3,20 @@
 export const CONFIG = {
   TELEFONE_WHATSAPP: "554797002521",
   NOME_LOJA: "BOTÂNICA SAGRADA",
-  SLOGAN: "ALQUIMIA, RITUAL E TRADIÇÃO ERVANÁRIA",
+  SLOGAN: "ERVANARIA NATURAL, AUTOCUIDADO & BEM-ESTAR",
   MOEDA: "R$"
 };
 
 export const CATEGORIAS = [
-  { id: 'todos', nome: 'Ver Tudo', icone: '✨', slogan: 'Explore todos os produtos da nossa loja.' },
-  { id: 'velas', nome: 'Velas', icone: '🕯️', slogan: 'Velas criadas com intenção energética.' },
-  { id: 'chas', nome: 'Chás', icone: '🫖', slogan: 'Blends de conexão interna e cura sutil' },
-  { id: 'oleos', nome: 'Óleos', icone: '🧪', slogan: 'Extratos lipossolúveis para ritos de passagem e proteção' },
-  { id: 'patuas', nome: 'Patuás', icone: '🧿', slogan: 'Escudos energéticos de ancoramento e blindagem' },
-  { id: 'banhos', nome: 'Banhos', icone: '🌿', slogan: 'Limpeza áurica profunda e reposição energética' },
-  { id: 'sal-ritualistico', nome: 'Sal Ritualístico', icone: '🧂', slogan: 'Purificação e equilíbrio energético' },
-  { id: 'kits', nome: 'Kits Ritualísticos', icone: '🎁', slogan: 'Conjuntos completos para rituais e práticas espirituais' },
-  { id: 'guias', nome: 'Guias E Japamalas', icone: '📿', slogan: 'Recursos para aprofundar sua prática espiritual' }
+  { id: 'todos', nome: 'Ver Tudo', icone: '✨', slogan: 'Explore todos os produtos para o seu cuidado diário.' },
+  { id: 'velas', nome: 'Velas Aromáticas', icone: '🕯️', slogan: 'Velas artesanais para criar momentos de aconchego e intenção.' },
+  { id: 'chas', nome: 'Chás & Infusões', icone: '🫖', slogan: 'Blends para aconchego interno, leveza e pausa na rotina.' },
+  { id: 'oleos', nome: 'Óleos Botânicos', icone: '🧪', slogan: 'Macerados naturais para hidratação, automassagem e relaxamento.' },
+  { id: 'patuas', nome: 'Amuletos Botânicos', icone: '🧿', slogan: 'Peças artesanais para trazer boas vibrações e proteção ao seu dia.' },
+  { id: 'banhos', nome: 'Banhos de Ervas', icone: '🌿', slogan: 'Renovação sutil, frescor e relaxamento para o corpo e a mente.' },
+  { id: 'sal-ritualistico', nome: 'Sais Aromáticos', icone: '🧂', slogan: 'Sais de banho e esfoliação para purificação e equilíbrio.' },
+  { id: 'kits', nome: 'Kits de Autocuidado', icone: '🎁', slogan: 'Experiências completas para momentos especiais de pausa.' },
+  { id: 'guias', nome: 'Acessórios & Japamalas', icone: '📿', slogan: 'Peças especiais para ancorar sua intenção e prática de presença.' }
 ];
 
 export const PRODUTOS_MASTER = [
@@ -25,12 +25,12 @@ export const PRODUTOS_MASTER = [
   // ==========================================
   {
     id: 101,
-    nome: 'Vela de Amor: Magnetismo e Fogo Interno',
+    nome: 'Vela de Amor: Autoestima e Brilho Pessoal',
     categoria: 'velas',
     preco: 15.00,
     imagem: '/produtos/vela-amor.png',
-    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, formato perfeito bem detalhado, esta vela é consagrada para despertar o amor-próprio e o magnetismo pessoal.',
-    detalhes: ['Tempo de queima estimado: 3h', 'Cor: Vermelho Amor intenso', 'Peso: 40g']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com tons vivos e com acabamento detalhado. Desenvolvida para criar um clima de carinho, despertar o amor-próprio e elevar o seu brilho pessoal.',
+    detalhes: ['Tempo de queima estimado: 3h', 'Cor: Vermelho Intenso', 'Peso: 40g']
   },
   {
     id: 102,
@@ -38,8 +38,8 @@ export const PRODUTOS_MASTER = [
     categoria: 'velas',
     preco: 30.00,
     imagem: '/produtos/vela-lavanda-rosa.png',
-    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela é consagrada para atrair o amor suave e promover a harmonia emocional.',
-    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Rosa Suave', 'Peso: 120g', 'Essência: Lavanda']
+    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, em recipiente de vidro elegante. Traz um aroma suave para acolher suas emoções e promover harmonia no ambiente.',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Rosa Suave', 'Peso: 120g', 'Aroma: Lavanda']
   },
   {
     id: 103,
@@ -47,8 +47,8 @@ export const PRODUTOS_MASTER = [
     categoria: 'velas',
     preco: 30.00,
     imagem: '/produtos/vela-lavanda.png',
-    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela traz a paz e tranquilidade para o seu ambiente.',
-    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Branco', 'Peso: 120g', 'Essência: Lavanda']
+    descricao: 'Feita artesanalmente em recipiente de vidro com design minimalista. Ideal para momentos de meditação, leitura ou descanso, trazendo paz e serenidade ao espaço.',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Branco', 'Peso: 120g', 'Aroma: Lavanda']
   },
   {
     id: 104,
@@ -56,8 +56,8 @@ export const PRODUTOS_MASTER = [
     categoria: 'velas',
     preco: 30.00,
     imagem: '/produtos/vela-canela.png',
-    descricao: 'Feita artesanalmente com parafina mineral e pavio de algodão puro, pigmentada com corantes naturais, recipiente de vidro com visual elegante, esta vela movimenta o fluxo financeiro e promove a prosperidade para o seu ambiente.',
-    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Laranja', 'Peso: 120g', 'Essência: Canela']
+    descricao: 'Aromatizada com a energia estimulante da canela, esta vela aquecedora ajuda a despertar a motivação, o foco e o entusiasmo na sua rotina.',
+    detalhes: ['Tempo de queima estimado: 6h', 'Cor: Laranja', 'Peso: 120g', 'Aroma: Canela']
   },
 
   // ==========================================
@@ -69,25 +69,25 @@ export const PRODUTOS_MASTER = [
     categoria: 'chas',
     preco: 10.00,
     imagem: '/produtos/cha-amor.jpeg',
-    descricao: 'Uma infusão de ervas naturais desenvolvida para despertar a sua autoestima e confiança.',
+    descricao: 'Uma infusão suave de ervas selecionadas para acolher os sentimentos, proporcionar momentos de pausa e fortalecer a autoaceitação.',
     detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Hibisco, Artemísia, Manjericão', 'Rende aproximadamente 3 xícaras']
   },
   {
     id: 202,
-    nome: 'Blend Natural: Chá de Frutificação e Bonança',
+    nome: 'Blend Natural: Chá de Prosperidade e Entusiasmo',
     categoria: 'chas',
     preco: 10.00,
     imagem: '/produtos/cha-prosperidade.png',
-    descricao: 'Uma infusão de ervas naturais criada para elevar o seu padrão vibratório e sintonizar sua mente com o fluxo da abundância e prosperidade.',
+    descricao: 'Uma infusão especiada e estimulante criada para renovar o ânimo, clarear a mente e trazer uma sensação de abundância ao seu dia.',
     detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Canela, Alecrim, Louro', 'Rende aproximadamente 3 xícaras']
   },
   {
     id: 203,
-    nome: 'Blend Natural: Chá de Purificação e Fortalecimento',
+    nome: 'Blend Natural: Chá de Purificação e Renovação',
     categoria: 'chas',
     preco: 10.00,
     imagem: '/produtos/cha-protecao.jpg',
-    descricao: 'Uma poderosa infusão de ervas naturais criada para purificar o espírito de dentro para fora e blindar o seu campo magnético contra energias densas.',
+    descricao: 'Uma infusão herbal refrescante formulada para ajudar a desacelerar a mente, proporcionando alívio e leveza para o corpo.',
     detalhes: ['Peso: 15g', '100% Natural', 'Ervas: Arruda, Sálvia, Eucalipto', 'Rende aproximadamente 3 xícaras']
   },
 
@@ -96,30 +96,30 @@ export const PRODUTOS_MASTER = [
   // ==========================================
   {
     id: 301,
-    nome: 'Óleo Botânico: Sucesso e Riqueza',
+    nome: 'Óleo Botânico: Sucesso e Vitalidade',
     categoria: 'oleos',
     preco: 15.00,
     imagem: '/produtos/oleo-prosperidade.png',
-    descricao: 'Uma poderosa poção de alta frequência vibracional, formulada em uma base pura de Óleo Natural de Girassol — a planta que carrega a própria energia do Sol.',
-    detalhes: ['Peso: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou essências artificiais']
+    descricao: 'Óleo corporal enriquecido, formulado em uma base pura de Óleo Natural de Girassol com ervas estimulantes que trazem a energia radiante do Sol.',
+    detalhes: ['Volume: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou fragrâncias sintéticas']
   },
   {
     id: 302,
-    nome: 'Óleo Botânico: Amor e Atração',
+    nome: 'Óleo Botânico: Amor e Nutrição',
     categoria: 'oleos',
     preco: 15.00,
     imagem: '/produtos/oleo-amor.jpeg',
-    descricao: 'Uma poção corporal luxuosa, formulada com uma base pura de Óleo de Amêndoas Doces e infundida com ervas de alta potência magnética. O Hibisco atua despertando o fogo interno.',
-    detalhes: ['Base 100% natural de Amêndoas Doces', 'Infundido com ervas verdadeiras por ciclos lunares', 'Ideal para usar pós-banho ou em massagens']
+    descricao: 'Um elixir corporal suave formulado com Óleo de Amêndoas Doces puro e botânicos selecionados. Perfeito para hidratação intensa e automassagem.',
+    detalhes: ['Base 100% natural de Amêndoas Doces', 'Infundido com pétalas e folhas naturais', 'Ideal para usar pós-banho ou em massagens']
   },
   {
     id: 303,
-    nome: 'Óleo Botânico: Defesa e Blindagem',
+    nome: 'Óleo Botânico: Equilíbrio e Proteção',
     categoria: 'oleos',
     preco: 15.00,
     imagem: '/produtos/oleo-protecao.jpg',
-    descricao: 'Um poderoso óleo ritualístico de alta proteção, formulado em uma base leve e regeneradora de Óleo de Semente de Uva. Este elixir atua como um verdadeiro escudo invisível.',
-    detalhes: ['Base 100% natural de Semente de Uva', 'Macerado com Arruda, Sálvia e Eucalipto legítimos', 'Ideal para aplicar nos pulsos, nuca e chakras antes de sair de casa']
+    descricao: 'Óleo de toque leve formulado em base de Semente de Uva. Traz o aroma revigorante do eucalipto e da sálvia para criar um momento de alívio e bem-estar.',
+    detalhes: ['Base 100% natural de Semente de Uva', 'Macerado com Arruda, Sálvia e Eucalipto', 'Ideal para aplicar nos pulsos, nuca e têmporas']
   },
 
   // ==========================================
@@ -127,61 +127,61 @@ export const PRODUTOS_MASTER = [
   // ==========================================
   {
     id: 403,
-    nome: 'Banho Botânico: Amor e Magnetismo',
+    nome: 'Banho Botânico: Amor e Autoestima',
     categoria: 'banhos',
     preco: 10.00,
     imagem: '/produtos/banho-amor.jpeg',
-    descricao: 'Uma mistura poderosa desenvolvida para despertar o amor-próprio e o poder da atração.',
+    descricao: 'Uma seleção de ervas florais e aromáticas perfeita para um banho relaxante, promovendo a reconexão com o seu amor-próprio.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Hibisco, Artemísia e Manjericão']
   },
   {
     id: 404,
-    nome: 'Banho Botânico: Prosperidade e Florescimento',
+    nome: 'Banho Botânico: Prosperidade e Leveza',
     categoria: 'banhos',
     preco: 10.00,
     imagem: '/produtos/banho-prosperidade.png',
-    descricao: 'Uma mistura poderosa desenvolvida para movimentar o fluxo da abundância e sintonizar sua vida com o sucesso material.',
+    descricao: 'Uma combinação herbal revigorante desenhada para renovar as energias, espantar o cansaço e trazer otimismo.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Alecrim, Canela e Louro']
   },
   {
     id: 405,
-    nome: 'Banho Botânico: Proteção e Renovação',
+    nome: 'Banho Botânico: Limpeza e Frescor',
     categoria: 'banhos',
     preco: 10.00,
     imagem: '/produtos/banho-protecao.jpg',
-    descricao: 'Uma mistura poderosa desenvolvida para purificar, descarregar e blindar o seu campo magnético.',
+    descricao: 'Uma mistura tradicional de ervas aromáticas para lavar as preocupações do dia a dia e proporcionar um alívio profundo.',
     detalhes: ['Peso: 30g', '100% Natural', 'Ervas: Arruda, Sálvia e Eucalipto']
   },
 
   // ==========================================
-  // --- CATEGORIA: SAL RITUALÍSTICO ---
+  // --- CATEGORIA: SAL RITUALÍSTICO (SAIS AROMÁTICOS) ---
   // ==========================================
   {
     id: 601,
-    nome: 'Sal Ritualístico: Fertilidade e Fortuna',
+    nome: 'Sal Aromático: Prosperidade e Energia',
     categoria: 'sal-ritualistico',
     preco: 10.00,
     imagem: '/produtos/sal-prosperidade.png',
-    descricao: 'Uma alquimia potente e vibrante desenvolvida para movimentar a energia financeira e atrair o sucesso material. Este sal marinho purificador é imantado na cor amarela com ervas.',
-    detalhes: ['Peso: 100g', 'Cor: Amarelo', 'Ervas: Louro, Canela e Alecrim']
+    descricao: 'Sais marinhos esfoliantes e perfumados, com tonalidade amarela e toque de ervas finas. Ideal para banhos de imersão ou esfoliação suave dos pés.',
+    detalhes: ['Peso: 100g', 'Cor: Amarelo suave', 'Ervas: Louro, Canela e Alecrim']
   },
   {
     id: 602,
-    nome: 'Sal Ritualístico: Amor e Sedução',
+    nome: 'Sal Aromático: Amor e Conexão',
     categoria: 'sal-ritualistico',
     preco: 10.00,
     imagem: '/produtos/sal-amor.jpeg',
-    descricao: 'Uma alquimia intensa e envolvente criada para despertar o amor-próprio, o brilho pessoal e o poder de sedução. Este sal marinho purificador é imantado na cor vermelha com ervas.',
+    descricao: 'Sais de banho perfumados com hibisco e manjericão, criados para proporcionar uma experiência sensorial relaxante e romântica.',
     detalhes: ['Peso: 100g', 'Cor: Vermelho', 'Ervas: Hibisco, Artemísia e Manjericão']
   },
   {
     id: 603,
-    nome: 'Sal Ritualístico: Limpeza e Banimento',
+    nome: 'Sal Aromático: Renovação e Purificação',
     categoria: 'sal-ritualistico',
     preco: 10.00,
     imagem: '/produtos/sal-protecao.jpg',
-    descricao: 'Uma alquimia de corte pesado desenvolvida para purificar, descarregar e blindar o seu campo magnético. Este sal marinho purificador é imantado na cor negra com ervas.',
-    detalhes: ['Peso: 100g', 'Cor: Negro', 'Ervas: Arruda, Sálvia e Eucalipto']
+    descricao: 'Sais marinhos intensos com foco na neutralização de tensões do corpo e descarrego do estresse do dia a dia.',
+    detalhes: ['Peso: 100g', 'Cor: Escuro natural', 'Ervas: Arruda, Sálvia e Eucalipto']
   },
 
   // ==========================================
@@ -189,71 +189,70 @@ export const PRODUTOS_MASTER = [
   // ==========================================
   {
     id: 701,
-    nome: 'Kit Ritual Completo: Magnetismo e Amor Absoluto',
+    nome: 'Kit de Autocuidado: Amor & Atração',
     categoria: 'kits',
     preco: 60.00,
     imagem: '/produtos/kit-amor.jpeg',
-    descricao: 'Um kit completo para despertar o seu poder de atração, autoestima e brilho pessoal. Contém 5 itens selecionados dispostos em uma linda caixa de madeira reutilizável.',
-    detalhes: ['Banho Botânico: Amor e Magnetismo', 'Óleo Botânico: Amor e Atração', 'Sal Ritualístico: Amor e Sedução', 'Blend Natural: Chá de Amor e Autoestima', 'Patuá do Amor: Magnetismo e Desejo']
+    descricao: 'Um kit completo criado para nutrir sua autoestima e proporcionar momentos inesquecíveis de carinho pessoal. Acompanha uma linda caixa de madeira artesanal.',
+    detalhes: ['Banho Botânico: Amor e Autoestima', 'Óleo Botânico: Amor e Nutrição', 'Sal Aromático: Amor e Conexão', 'Blend Natural: Chá de Amor e Autoestima', 'Amuleto Botânico: Amor e Harmonia']
   },
   {
     id: 702,
-    nome: 'Kit Ritual Completo: Limpeza e Proteção',
+    nome: 'Kit de Autocuidado: Limpeza e Serenidade',
     categoria: 'kits',
     preco: 60.00,
     imagem: '/produtos/kit-protecao.jpg',
-    descricao: 'Um kit completo para proteger você e seu ambiente de energias densas. Contém 5 itens essenciais acompanhados de uma caixa de madeira reutilizável.',
-    detalhes: ['Banho Botânico: Proteção e Renovação', 'Óleo Botânico: Defesa e Blindagem', 'Sal Ritualístico: Limpeza e Banimento', 'Blend Natural: Chá de Purificação e Fortalecimento', 'Patuá da Proteção: Barreira e Escudo']
+    descricao: 'Um kit desenhado para proporcionar alívio, tranquilidade e proteção contra a rotina exaustiva. Acompanha caixa de madeira sustentável.',
+    detalhes: ['Banho Botânico: Limpeza e Frescor', 'Óleo Botânico: Equilíbrio e Proteção', 'Sal Aromático: Renovação e Purificação', 'Blend Natural: Chá de Purificação e Renovação', 'Amuleto Botânico: Proteção e Harmonia']
   },
   {
     id: 703,
-    nome: 'Kit Ritual Completo: Prosperidade e Abundância',
+    nome: 'Kit de Autocuidado: Prosperidade e Foco',
     categoria: 'kits',
     preco: 60.00,
     imagem: '/produtos/kit-prosperidade.png',
-    descricao: 'Um kit completo meticulosamente preparado para atrair abundância, sucesso e movimentação material. Acompanha caixa de madeira de estúdio.',
-    detalhes: ['Banho Botânico: Prosperidade e Florescimento', 'Óleo Botânico: Sucesso e Riqueza', 'Sal Ritualístico: Fertilidade e Fortuna', 'Blend Natural: Chá de Frutificação e Bonança', 'Patuá de Prosperidade: Conquista e Triunfo']
+    descricao: 'Conjunto especial com ervas e aromas estimulantes para atrair boas ideias, motivação e clareza nos seus objetivos.',
+    detalhes: ['Banho Botânico: Prosperidade e Leveza', 'Óleo Botânico: Sucesso e Vitalidade', 'Sal Aromático: Prosperidade e Energia', 'Blend Natural: Chá de Prosperidade e Entusiasmo', 'Amuleto Botânico: Abundância']
   },
-
-   {
+  {
     id: 704,
-    nome: 'Kit 10 Ervas Naturais: Limpeza, Proteção e Purificação',
+    nome: 'Kit Ervanaria: 10 Ervas Selecionadas',
     categoria: 'kits',
     preco: 30.00,
     imagem: '/produtos/kit-ervas.jpg',
-    descricao: 'Um kit com 10 ervas naturais selecionadas para limpeza, proteção e purificação do ambiente. Acompanha caixa de madeira de estúdio. Hibisco, Artemísia, Manjericão, Arruda, Sálvia, Eucalipto, Alecrim, Canela em po e em pau, e Louro.',
-    detalhes: ['Contem: 10 Ervas', 'Caixa De Madeira', 'Peso: 5g Cada Erva']
+    descricao: 'Uma coleção artesanal com 10 ervas naturais puras para você criar suas próprias infusões, banhos e defumações. Acompanha caixinha de madeira.',
+    detalhes: ['Contém: 10 Ervas selecionadas', 'Caixa de Madeira Artesanal', 'Peso: 5g cada porção']
   },
 
   // ==========================================
-  // --- CATEGORIA: PATUÁS ---
+  // --- CATEGORIA: AMULETOS (ANTIGOS PATUÁS) ---
   // ==========================================
   {
     id: 801,
-    nome: 'Patuá do Amor: Magnetismo e Amor Absoluto',
+    nome: 'Amuleto Botânico: Amor e Harmonia',
     categoria: 'patuas',
     preco: 15.00,
     imagem: '/produtos/patua-amor.jpeg',
-    descricao: 'Um patuá especializado para despertar o seu poder de atração, autoestima e brilho pessoal.',
-    detalhes: ['Contém ervas selecionadas', 'Artemísia, Hibisco e Manjericão verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+    descricao: 'Pequeno saquinho artesanal com ervas naturais perfumadas para carregar na bolsa ou manter na mesa de trabalho, emanando boas vibrações de amor.',
+    detalhes: ['Contém ervas naturais selecionadas', 'Artemísia, Hibisco e Manjericão', 'Perfeito para levar com você ou presentear']
   },
   {
     id: 802,
-    nome: 'Patuá da Proteção: Barreira e Escudo',
+    nome: 'Amuleto Botânico: Proteção e Equilíbrio',
     categoria: 'patuas',
     preco: 15.00,
     imagem: '/produtos/patua-protecao.jpg',
-    descricao: 'Um patuá especializado para proteger seu campo áurico e o seu ambiente contra energias nocivas.',
-    detalhes: ['Contém ervas escolhidas para fortalecer o campo energético', 'Arruda, Sálvia e Eucalipto verdadeiros', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+    descricao: 'Amuleto de ervas secas que exalam aromas herbais revigorantes, criado para ancorar energias de paz e proteção ao seu redor.',
+    detalhes: ['Seleção de ervas purificadoras', 'Arruda, Sálvia e Eucalipto', 'Ideal para usar na bolsa, carro ou gaveta']
   },
   {
     id: 803,
-    nome: 'Patuá de Prosperidade: Conquista e Triunfo',
+    nome: 'Amuleto Botânico: Prosperidade e Foco',
     categoria: 'patuas',
     preco: 15.00,
     imagem: '/produtos/patua-prosperidade.png',
-    descricao: 'Um patuá especializado e imantado para atrair caminhos abertos, abundância e sucesso financeiro.',
-    detalhes: ['Contém ervas escolhidas para atrair fartura', 'Louro, Alecrim e Canela legítimos', 'Perfeito para carregar na bolsa ou deixar no ambiente de trabalho']
+    descricao: 'Sachê aromático com ervas estimulantes e especiarias para inspirar progresso, criatividade e boas oportunidades.',
+    detalhes: ['Com especiarias naturais', 'Louro, Alecrim e Canela', 'Ideal para manter na carteira ou local de trabalho']
   },
 
   // ==========================================
@@ -261,11 +260,11 @@ export const PRODUTOS_MASTER = [
   // ==========================================
   {
     id: 901,
-    nome: 'Guia Pomba Gira: Conexão e Magia Feminina',
+    nome: 'Colar de Cristais: Energia & Força Feminina',
     categoria: 'guias',
     preco: 100.00,
     imagem: '/produtos/guia-pomba-gira-1.png',
-    descricao: 'Um guia especializado para fortalecer a conexão com a energia feminina e desbloquear o poder da magia.',
-    detalhes: ['Comprimento: 90 cm', 'Material: Cristal Austríaco', 'Pingente Numero 7 + Garfo + Firma']
+    descricao: 'Acessório artesanal confeccionado com cristais de alta qualidade, pensado para exaltar a elegância, a autoconfiança e a força da energia feminina.',
+    detalhes: ['Comprimento: 90 cm', 'Material: Cristal Austríaco', 'Acabamento especial e detalhado']
   }
 ];
