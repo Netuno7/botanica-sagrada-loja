@@ -98,17 +98,17 @@ export const PRODUTOS_MASTER = [
     id: 301,
     nome: 'Óleo Botânico: Sucesso e Vitalidade',
     categoria: 'oleos',
-    preco: 15.00,
-    imagem: '/produtos/oleo-prosperidade.png',
+    preco: 20.00,
+    imagem: '/produtos/oleo-prosperidade.jpg',
     descricao: 'Óleo corporal enriquecido, formulado em uma base pura de Óleo Natural de Girassol com ervas estimulantes que trazem a energia radiante do Sol.',
     detalhes: ['Volume: 20ml', '100% Natural', 'Ervas: Canela, Laranja, Maçã e Alecrim', 'Livre de conservantes ou fragrâncias sintéticas']
   },
   {
     id: 302,
-    nome: 'Óleo Botânico: Amor e Nutrição',
+    nome: 'Óleo Botânico: Amor e Paixão',
     categoria: 'oleos',
-    preco: 15.00,
-    imagem: '/produtos/oleo-amor.jpeg',
+    preco: 20.00,
+    imagem: '/produtos/oleo-amor.jpg',
     descricao: 'Um elixir corporal suave formulado com Óleo de Amêndoas Doces puro e botânicos selecionados. Perfeito para hidratação intensa e automassagem.',
     detalhes: ['Base 100% natural de Amêndoas Doces', 'Infundido com pétalas e folhas naturais', 'Ideal para usar pós-banho ou em massagens']
   },
@@ -116,10 +116,19 @@ export const PRODUTOS_MASTER = [
     id: 303,
     nome: 'Óleo Botânico: Equilíbrio e Proteção',
     categoria: 'oleos',
-    preco: 15.00,
+    preco: 20.00,
     imagem: '/produtos/oleo-protecao.jpg',
     descricao: 'Óleo de toque leve formulado em base de Semente de Uva. Traz o aroma revigorante do eucalipto e da sálvia para criar um momento de alívio e bem-estar.',
     detalhes: ['Base 100% natural de Semente de Uva', 'Macerado com Arruda, Sálvia e Eucalipto', 'Ideal para aplicar nos pulsos, nuca e têmporas']
+  },
+  {
+    id: 304,
+    nome: 'Óleo Botânico: Luxúria e Prazer',
+    categoria: 'oleos',
+    preco: 20.00,
+    imagem: '/produtos/oleo-luxuria.jpg',
+    descricao: 'Óleo de toque leve formulado em base de Semente de Uva. Traz o aroma revigorante do eucalipto e da sálvia para criar um momento de alívio e bem-estar.',
+    detalhes: ['Base 100% natural', 'Aroma envolvente', 'Ideal para momentos especiais']
   },
 
   // ==========================================
@@ -225,7 +234,7 @@ export const PRODUTOS_MASTER = [
   },
 
   // ==========================================
-  // --- CATEGORIA: AMULETOS (ANTIGOS PATUÁS) ---
+  // --- CATEGORIA: AMULETOS ---
   // ==========================================
   {
     id: 801,
@@ -267,4 +276,13 @@ export const PRODUTOS_MASTER = [
     descricao: 'Acessório artesanal confeccionado com cristais de alta qualidade, pensado para exaltar a elegância, a autoconfiança e a força da energia feminina.',
     detalhes: ['Comprimento: 90 cm', 'Material: Cristal Austríaco', 'Acabamento especial e detalhado']
   }
+];
+
+// ==========================================
+// --- DEPOIMENTOS: BOTÂNICA SAGRADA ---
+// ==========================================
+export const DEPOIMENTOS = [
+  { id: 1, imagem: '/bsdp/bsdp1.png', alt: "Depoimento Botânica Sagrada 1" },
+  { id: 2, imagem: '/bsdp/bsdp2.png', alt: "Depoimento Botânica Sagrada 2" },
+  { id: 3, imagem: '/bsdp/bsdp3.png', alt: "Depoimento Botânica Sagrada 3" }
 ];
