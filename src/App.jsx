@@ -11,39 +11,70 @@ const CUPONS_VALIDOS = {
 };
 
 const VALOR_MINIMO_BRINDE = 200.00;
-
 const IMAGEM_PADRAO_KIT = "/produtos/kit-amor.jpeg";
+
+// Emojis para representar cada categoria nos botões
+const EMOJIS_CATEGORIAS = {
+  'todos': '✨',
+  'velas': '🕯️',
+  'kits': '🎁',
+  'banhos': '🌿',
+  'oleos': '🧪',
+  'chas': '🫖',
+  'sais': '🧂',
+  'amuletos': '🧿',
+  'acessorios': '📿'
+};
 
 const ITENS_DESTAQUE = [
   {
     nome: "Kit Completo de Autocuidado",
     foto: "/produtos/kit-amor.jpeg",
-    fallback: "/produtos/kit-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
   },
   {
     nome: "Banho Botânico: Amor e Magnetismo",
     foto: "/produtos/banho-amor.jpeg",
-    fallback: "/produtos/banho-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
   },
   {
     nome: "Óleo Botânico: Amor e Atração",
     foto: "/produtos/oleo-amor.jpeg",
-    fallback: "/produtos/oleo-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
   },
   {
     nome: "Blend Natural: Chá de Amor e Autoestima",
     foto: "/produtos/cha-amor.jpeg",
-    fallback: "/produtos/cha-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
   },
   {
     nome: "Sal Aromático: Amor e Sedução",
     foto: "/produtos/sal-amor.jpeg",
-    fallback: "/produtos/sal-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
   },
   {
     nome: "Amuleto Botânico: Magnetismo e Intenção",
     foto: "/produtos/patua-amor.jpeg",
-    fallback: "/produtos/patua-amor.jpeg"
+    fallback: IMAGEM_PADRAO_KIT
+  }
+];
+
+// Depoimentos em Fotos (Prints de Avaliações)
+const DEPOIMENTOS_FOTOS = [
+  {
+    id: 1,
+    foto: "/assets/bsdp/bsdp1.png",
+    alt: "Depoimento de Cliente 1"
+  },
+  {
+    id: 2,
+    foto: "/assets/bsdp/bsdp2.png",
+    alt: "Depoimento de Cliente 2"
+  },
+  {
+    id: 3,
+    foto: "/assets/bsdp/bsdp3.png",
+    alt: "Depoimento de Cliente 3"
   }
 ];
 
@@ -64,8 +95,21 @@ export default function App() {
   const [cep, setCep] = useState('');
   const [carregandoCep, setCarregandoCep] = useState(false);
   const [erroCep, setErroCep] = useState('');
-  const [endereco, setEndereco] = useState({ rua: '', numero: '', bairro: '', cidade: '', estado: '', complemento: '' });
-  const [dadosCliente, setDadosCliente] = useState({ nome: '', sobrenome: '', telefone: '', cpf: '', observacoes: '' });
+  const [endereco, setEndereco] = useState({ 
+    rua: '', 
+    numero: '', 
+    complemento: '', 
+    bairro: '', 
+    cidade: '', 
+    estado: '' 
+  });
+  const [dadosCliente, setDadosCliente] = useState({ 
+    nome: '', 
+    sobrenome: '', 
+    telefone: '', 
+    cpf: '', 
+    observacoes: '' 
+  });
   const [frete, setFrete] = useState(0);
   const [freteCalculado, setFreteCalculado] = useState(false);
 
@@ -123,7 +167,6 @@ export default function App() {
   const totalFinalComDescontosEFrete = useMemo(() => Math.max(0, totalGeralProdutos - valorDescontoCupom + frete), [totalGeralProdutos, valorDescontoCupom, frete]);
   const totalItensNoCarrinho = useMemo(() => carrinho.reduce((sum, item) => sum + item.qtd, 0), [carrinho]);
   const metaCategoriaAtiva = useMemo(() => CATEGORIAS.find(c => c.id === categoriaSelecionada) || CATEGORIAS[0], [categoriaSelecionada]);
-  const produtoEmModal = useMemo(() => PRODUTOS_MASTER.find(p => p.id === idProdutoVisualizar) || kitDestaqueAmor, [idProdutoVisualizar, kitDestaqueAmor]);
 
   const atualizarEPersistirCarrinho = (novoCarrinho) => {
     setCarrinho(novoCarrinho);
@@ -170,32 +213,60 @@ export default function App() {
   const processarLidagemCep = async (e) => {
     const valorCru = e.target.value.replace(/\D/g, '');
     setCep(valorCru);
+    setErroCep('');
+
     if (valorCru.length === 8) {
       setCarregandoCep(true);
       try {
         const resposta = await fetch(`https://viacep.com.br/ws/${valorCru}/json/`);
         const dados = await resposta.json();
         if (!dados.erro) {
-          setEndereco(p => ({ ...p, rua: dados.logradouro || '', bairro: dados.bairro || '', cidade: dados.localidade || '', estado: dados.uf || '' }));
+          setEndereco(p => ({ 
+            ...p, 
+            rua: dados.logradouro || '', 
+            bairro: dados.bairro || '', 
+            cidade: dados.localidade || '', 
+            estado: dados.uf || '' 
+          }));
           setFrete(dados.uf === 'SP' || dados.uf === 'SC' ? 15.00 : 25.00);
           setFreteCalculado(true);
-        } else { setErroCep('CEP não encontrado.'); }
-      } catch (err) { setErroCep('Erro ao buscar CEP.'); }
-      finally { setCarregandoCep(false); }
+        } else { 
+          setErroCep('CEP não encontrado. Preencha os campos manualmente.'); 
+          setFreteCalculado(true); 
+        }
+      } catch (err) { 
+        setErroCep('Erro ao buscar o CEP. Digite o endereço manualmente.'); 
+        setFreteCalculado(true); 
+      } finally { 
+        setCarregandoCep(false); 
+      }
     }
   };
 
   const dispararPedidoParaWhatsapp = (e) => {
     e.preventDefault();
-    let m = `🌿 *PEDIDO DE AUTOCUIDADO - ${CONFIG.NOME_LOJA}* 🌿\n_${CONFIG.SLOGAN}_\n\n`;
-    m += `👤 *DESTINATÁRIO*\n• *Nome:* ${dadosCliente.nome.toUpperCase()} ${dadosCliente.sobrenome.toUpperCase()}\n• *Contato:* ${dadosCliente.telefone}\n\n`;
+    let m = `🌿 *PEDIDO DE AUTOCUIDADO - ${CONFIG.NOME_LOJA}* 🌿\n\n_${CONFIG.SLOGAN}_\n\n`;
+    m += `👤 *DESTINATÁRIO*\n`;
+    m += `• *Nome:* ${dadosCliente.nome.toUpperCase()} ${dadosCliente.sobrenome.toUpperCase()}\n`;
+    m += `• *CPF:* ${dadosCliente.cpf}\n`;
+    m += `• *Contato:* ${dadosCliente.telefone}\n\n`;
+    
     m += `📦 *ITENS SELECIONADOS*\n`;
     carrinho.forEach(item => m += `▪️ ${item.qtd}x _${item.nome}_ (${CONFIG.MOEDA} ${item.preco.toFixed(2)}/un)\n`);
     if (ganhaBrindeExtra) m += `🎁 *CORTESIA:* 1x _Amostra Especial de Mimo Botânico_\n`;
-    m += `\n🚚 *ENDEREÇO DE ENTREGA*\n• ${endereco.rua}, Nº ${endereco.numero} - ${endereco.bairro}\n• ${endereco.cidade}/${endereco.estado} - CEP: ${cep}\n\n`;
-    m += `💰 *RESUMO DO PEDIDO*\n• Produtos: ${CONFIG.MOEDA} ${totalGeralProdutos.toFixed(2)}\n• Frete: ${CONFIG.MOEDA} ${frete.toFixed(2)}\n`;
+    
+    m += `\n🚚 *ENDEREÇO DE ENTREGA*\n`;
+    m += `• CEP: ${cep}\n`;
+    m += `• Rua: ${endereco.rua}, Nº ${endereco.numero} ${endereco.complemento ? `(${endereco.complemento})` : ''}\n`;
+    m += `• Bairro: ${endereco.bairro}\n`;
+    m += `• Cidade/UF: ${endereco.cidade}/${endereco.estado.toUpperCase()}\n\n`;
+    
+    m += `💰 *RESUMO DO PEDIDO*\n`;
+    m += `• Produtos: ${CONFIG.MOEDA} ${totalGeralProdutos.toFixed(2)}\n`;
+    m += `• Frete: ${CONFIG.MOEDA} ${frete.toFixed(2)}\n`;
     if (cupomAplicado) m += `• Desconto (${cupomAplicado.nome}): -${CONFIG.MOEDA} ${valorDescontoCupom.toFixed(2)}\n`;
     m += `• *TOTAL FINAL:* ${CONFIG.MOEDA} ${totalFinalComDescontosEFrete.toFixed(2)}\n`;
+    
     window.open(`https://api.whatsapp.com/send?phone=${CONFIG.TELEFONE_WHATSAPP}&text=${encodeURIComponent(m)}`, '_blank');
     atualizarEPersistirCarrinho([]);
     setEtapaCheckout('carrinho');
@@ -218,6 +289,7 @@ export default function App() {
         </div>
         <nav className="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
           <button onClick={() => { setAbaAtiva('loja'); setEtapaCheckout('carrinho'); }} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'loja' ? 'border-[#8B0000] text-[#8B0000]' : 'border-transparent text-stone-500'}`}>Experiências</button>
+          <button onClick={() => setAbaAtiva('depoimentos')} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'depoimentos' ? 'border-[#8B0000] text-[#8B0000]' : 'border-transparent text-stone-500'}`}>Depoimentos</button>
           <button onClick={() => setAbaAtiva('sobre')} className={`text-xs uppercase tracking-[0.2em] font-bold pb-1 border-b-2 ${abaAtiva === 'sobre' ? 'border-[#8B0000] text-[#8B0000]' : 'border-transparent text-stone-500'}`}>Nossa Filosofia</button>
           <button onClick={() => setAbaAtiva('carrinho')} className="flex items-center gap-3 px-6 py-2.5 rounded-full text-xs font-bold tracking-[0.18em] uppercase border bg-white border-[#8B0000]/30 text-[#8B0000] shadow-sm">
             <span>Sacola ({totalItensNoCarrinho})</span>
@@ -231,12 +303,9 @@ export default function App() {
           <div>
             {/* HERO BANNER DE DESTAQUE */}
             <div className="mb-12 bg-gradient-to-br from-[#2D060B] via-[#1E0407] to-[#2D060B] text-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border-2 border-[#8B0000]/60 relative">
-              
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#8B0000] to-transparent"></div>
 
               <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
-                
-                {/* COLUNA ESQUERDA */}
                 <div className="p-6 sm:p-10 md:col-span-7 flex flex-col justify-between gap-4 text-left relative z-10">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
@@ -261,11 +330,11 @@ export default function App() {
                       {kitDestaqueAmor.descricao}
                     </p>
 
-                    {/* LISTA DOS ITENS INCLUSOS */}
                     <div className="bg-[#1A0306]/80 p-4 rounded-2xl border border-[#8B0000]/50 my-2 backdrop-blur-md">
                       <span className="text-[11px] uppercase font-bold tracking-widest text-[#E89CA0] block mb-2 flex items-center gap-1.5">
                         <span>✨</span> Itens que Acompanham a Experiência:
                       </span>
+
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-300 font-light">
                         {kitDestaqueAmor.detalhes.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-1.5">
@@ -293,9 +362,7 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* COLUNA DIREITA */}
                 <div className="p-4 sm:p-6 md:col-span-5 flex flex-col justify-between items-center bg-[#0D0203] border-t md:border-t-0 md:border-l border-[#8B0000]/30 gap-4">
-                  
                   <div className="w-full aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden relative border border-[#8B0000]/50 shadow-2xl bg-[#0A0102] flex items-center justify-center p-1 group">
                     <img 
                       src={ITENS_DESTAQUE[fotoAtivaIndex].foto} 
@@ -303,7 +370,7 @@ export default function App() {
                       className="w-full h-full object-cover rounded-xl transition-all duration-500 group-hover:scale-105" 
                       onError={(e) => { 
                         e.target.onerror = null; 
-                        e.target.src = ITENS_DESTAQUE[fotoAtivaIndex].fallback || IMAGEM_PADRAO_KIT; 
+                        e.target.src = IMAGEM_PADRAO_KIT; 
                       }}
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A0102] via-[#0A0102]/70 to-transparent p-4 text-center">
@@ -312,15 +379,14 @@ export default function App() {
                       </span>
                     </div>
                   </div>
-                  
-                  {/* MINIATURAS INTERATIVAS */}
-                  <div className="grid grid-cols-6 gap-2 w-full">
+
+                  <div className="grid grid-cols-6 gap-1.5 w-full">
                     {ITENS_DESTAQUE.map((item, idx) => (
                       <button
                         key={idx}
                         onClick={() => setFotoAtivaIndex(idx)}
                         title={item.nome}
-                        className={`aspect-square rounded-xl overflow-hidden border-2 transition relative bg-[#0A0102] ${fotoAtivaIndex === idx ? 'border-[#FF6B81] scale-105 shadow-lg ring-2 ring-[#FF6B81]/30' : 'border-stone-800/80 opacity-50 hover:opacity-100'}`}
+                        className={`aspect-square rounded-lg overflow-hidden border-2 transition relative bg-[#0A0102] ${fotoAtivaIndex === idx ? 'border-[#FF6B81] scale-105 shadow-lg ring-2 ring-[#FF6B81]/30' : 'border-stone-800/80 opacity-50 hover:opacity-100'}`}
                       >
                         <img 
                           src={item.foto} 
@@ -328,26 +394,41 @@ export default function App() {
                           className="w-full h-full object-cover" 
                           onError={(e) => { 
                             e.target.onerror = null; 
-                            e.target.src = item.fallback || IMAGEM_PADRAO_KIT; 
+                            e.target.src = IMAGEM_PADRAO_KIT; 
                           }} 
                         />
                       </button>
                     ))}
                   </div>
-
                 </div>
-
               </div>
             </div>
 
-            {/* SELETOR DE CATEGORIAS */}
-            <div className="flex flex-wrap gap-2 justify-center mb-8">
-              {CATEGORIAS.map(cat => (
-                <button key={cat.id} onClick={() => setCategoriaSelecionada(cat.id)} className={`px-5 py-3 rounded-full text-xs font-bold tracking-wider uppercase border transition ${categoriaSelecionada === cat.id ? 'bg-[#8B0000] text-[#FFFFFF] border-[#8B0000] shadow-md' : 'bg-white text-stone-600 border-[#E3DDD1]'}`}>
-                  {cat.icone} {cat.nome}
-                </button>
-              ))}
+            {/* BOTÕES DE CATEGORIAS ESTILO PILLS */}
+            <div className="mb-10 w-full">
+              <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 px-2">
+                {CATEGORIAS.map(cat => {
+                  const estaAtivo = categoriaSelecionada === cat.id;
+                  const emojiCategoria = EMOJIS_CATEGORIAS[cat.id] || '🌿';
+
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setCategoriaSelecionada(cat.id)}
+                      className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm border ${
+                        estaAtivo 
+                          ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-md scale-105 ring-2 ring-[#8B0000]/20' 
+                          : 'bg-white text-stone-700 border-stone-300 hover:border-[#8B0000]/60 hover:text-[#8B0000] hover:bg-[#FAF8F5]'
+                      }`}
+                    >
+                      <span className="text-sm">{emojiCategoria}</span>
+                      <span>{cat.nome}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+
             <p className="text-xs italic text-stone-500 text-center max-w-2xl mx-auto mb-10 font-serif">"{metaCategoriaAtiva.slogan}"</p>
 
             {/* GRADE DE PRODUTOS */}
@@ -380,6 +461,34 @@ export default function App() {
                         <button onClick={() => adicionarAoCarrinho(prod)} className="py-2.5 bg-[#2C3E2B] text-white rounded-lg hover:bg-[#8B0000] transition">Adicionar</button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* DEPOIMENTOS (FOTOS) */}
+        {abaAtiva === 'depoimentos' && (
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-serif text-3xl font-bold text-[#2C3E2B] mb-2">Relatos & Depoimentos</h2>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#8B0000] font-bold">✦ O carinho de quem viveu a experiência Botânica Sagrada ✦</p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {DEPOIMENTOS_FOTOS.map(dep => (
+                <div key={dep.id} className="bg-white border border-[#E3DDD1] rounded-2xl p-3 shadow-sm overflow-hidden group">
+                  <div className="w-full aspect-[4/5] rounded-xl overflow-hidden bg-stone-100 relative">
+                    <img 
+                      src={dep.foto} 
+                      alt={dep.alt} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = IMAGEM_PADRAO_KIT;
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -447,60 +556,128 @@ export default function App() {
               </div>
             )}
 
+            {/* FORMULÁRIO COMPLETO DE DADOS PARA ENVIO */}
             {etapaCheckout === 'dados' && (
-              <div className="flex flex-col gap-4">
-                <h3 className="font-serif font-bold text-sm uppercase tracking-wide text-[#2C3E2B]">Dados para Envio</h3>
-                <div className="grid grid-cols-2 gap-2"><input type="text" placeholder="Nome" value={dadosCliente.nome} onChange={e => setDadosCliente({...dadosCliente, nome: e.target.value})} className="border p-2 text-xs rounded" /><input type="text" placeholder="WhatsApp" value={dadosCliente.telefone} onChange={e => setDadosCliente({...dadosCliente, telefone: e.target.value})} className="border p-2 text-xs rounded" /></div>
-                <input type="text" placeholder="CEP (apenas números)" maxLength="8" value={cep} onChange={processarLidagemCep} className="border p-2 text-xs rounded font-bold" />
-                {carregandoCep && <p className="text-[10px] text-stone-400 animate-pulse">Buscando endereço...</p>}
-                <input type="text" placeholder="Rua / Avenida" value={endereco.rua} onChange={e => setEndereco({...endereco, rua: e.target.value})} className="border p-2 text-xs rounded" />
-                <input type="text" placeholder="Número" value={endereco.numero} onChange={e => setEndereco({...endereco, numero: e.target.value})} className="border p-2 text-xs rounded w-1/3" />
-                <div className="flex gap-2"><button onClick={() => setEtapaCheckout('carrinho')} className="w-1/2 py-2 border text-xs rounded">Voltar</button><button onClick={() => { if(dadosCliente.nome && freteCalculado) setEtapaCheckout('revisao'); else alert('Preencha seu nome e um CEP válido.'); }} className="w-1/2 py-2 bg-[#8B0000] text-white text-xs rounded uppercase font-bold">Ver Resumo</button></div>
-              </div>
-            )}
+              <div className="flex flex-col gap-3 text-xs">
+                <h3 className="font-serif font-bold text-sm uppercase tracking-wide text-[#2C3E2B] mb-1">
+                  Dados de Entrega e Identificação
+                </h3>
 
-            {etapaCheckout === 'revisao' && (
-              <div className="flex flex-col gap-4 text-xs">
-                <h3 className="font-serif font-bold text-sm uppercase tracking-wide text-center text-[#8B0000]">Finalização do Pedido</h3>
-                <div className="bg-[#FAF8F5] p-4 rounded-xl border flex flex-col gap-2">
-                  <p><strong>Cliente:</strong> {dadosCliente.nome} — {dadosCliente.telefone}</p>
-                  <p><strong>Destino:</strong> {endereco.rua}, Nº {endereco.numero} — {endereco.cidade}/{endereco.estado}</p>
-                  <p className="border-t pt-2 font-bold text-sm text-[#8B0000]">Total Geral com Frete: {CONFIG.MOEDA} {totalFinalComDescontosEFrete.toFixed(2)}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <input 
+                    type="text" 
+                    placeholder="Nome" 
+                    value={dadosCliente.nome} 
+                    onChange={e => setDadosCliente({...dadosCliente, nome: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Sobrenome" 
+                    value={dadosCliente.sobrenome} 
+                    onChange={e => setDadosCliente({...dadosCliente, sobrenome: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
                 </div>
-                <button onClick={dispararPedidoParaWhatsapp} className="w-full py-4 bg-[#8B0000] text-white text-xs uppercase tracking-widest font-bold rounded-lg shadow-md text-center">Enviar Pedido via WhatsApp</button>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <input 
+                    type="text" 
+                    placeholder="WhatsApp / Contato" 
+                    value={dadosCliente.telefone} 
+                    onChange={e => setDadosCliente({...dadosCliente, telefone: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="CPF (apenas números)" 
+                    value={dadosCliente.cpf} 
+                    onChange={e => setDadosCliente({...dadosCliente, cpf: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
+                </div>
+
+                <div className="border-t border-stone-200 my-1 pt-2">
+                  <label className="block text-[10px] uppercase font-bold text-stone-500 mb-1">Endereço de Despacho</label>
+                  <input 
+                    type="text" 
+                    placeholder="CEP (apenas 8 números)" 
+                    maxLength="8" 
+                    value={cep} 
+                    onChange={processarLidagemCep} 
+                    className="border p-2.5 rounded font-bold border-stone-300 w-full focus:outline-[#8B0000]" 
+                  />
+                  {carregandoCep && <p className="text-[10px] text-amber-700 animate-pulse mt-1">Buscando endereço via ViaCEP...</p>}
+                  {erroCep && <p className="text-[10px] text-red-600 mt-1 font-bold">{erroCep}</p>}
+                </div>
+
+                <input 
+                  type="text" 
+                  placeholder="Rua / Logradouro" 
+                  value={endereco.rua} 
+                  onChange={e => setEndereco({...endereco, rua: e.target.value})} 
+                  className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                />
+
+                <div className="grid grid-cols-3 gap-2">
+                  <input 
+                    type="text" 
+                    placeholder="Número" 
+                    value={endereco.numero} 
+                    onChange={e => setEndereco({...endereco, numero: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 col-span-1 focus:outline-[#8B0000]" 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Complemento (Apto, Bloco)" 
+                    value={endereco.complemento} 
+                    onChange={e => setEndereco({...endereco, complemento: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 col-span-2 focus:outline-[#8B0000]" 
+                  />
+                </div>
+
+                <input 
+                  type="text" 
+                  placeholder="Bairro" 
+                  value={endereco.bairro} 
+                  onChange={e => setEndereco({...endereco, bairro: e.target.value})} 
+                  className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                />
+
+                <div className="grid grid-cols-2 gap-2">
+                  <input 
+                    type="text" 
+                    placeholder="Cidade" 
+                    value={endereco.cidade} 
+                    onChange={e => setEndereco({...endereco, cidade: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Estado (UF)" 
+                    maxLength="2" 
+                    value={endereco.estado} 
+                    onChange={e => setEndereco({...endereco, estado: e.target.value})} 
+                    className="border p-2.5 rounded border-stone-300 focus:outline-[#8B0000]" 
+                  />
+                </div>
+
+                {freteCalculado && (
+                  <div className="bg-[#FAF8F5] p-3 rounded border border-stone-200 mt-2 flex justify-between items-center">
+                    <span className="font-bold text-stone-700">Frete Calculado:</span>
+                    <span className="font-black text-[#8B0000]">{CONFIG.MOEDA} {frete.toFixed(2)}</span>
+                  </div>
+                )}
+
+                <div className="flex gap-2 mt-4">
+                  <button onClick={() => setEtapaCheckout('carrinho')} className="px-4 py-2.5 border border-stone-300 rounded font-bold text-stone-600">Voltar</button>
+                  <button onClick={dispararPedidoParaWhatsapp} className="flex-1 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded font-bold uppercase tracking-wider">Enviar Pedido via WhatsApp</button>
+                </div>
               </div>
             )}
           </div>
         )}
       </main>
-
-      {/* MODAL DETALHES */}
-      {idProdutoVisualizar && produtoEmModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white max-w-xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto text-left flex flex-col gap-4 shadow-2xl border border-[#8B0000]/30">
-            <button onClick={() => setIdProdutoVisualizar(null)} className="absolute top-4 right-4 text-stone-400 hover:text-black">✕</button>
-            <h2 className="font-serif text-xl font-black text-[#2C3E2B]">{produtoEmModal.nome}</h2>
-            <p className="text-xs text-stone-600 bg-[#FAF8F5] p-3 rounded-lg border font-light leading-relaxed">{produtoEmModal.descricao}</p>
-            
-            <div className="border-t pt-3">
-              <h5 className="text-[10px] uppercase text-stone-400 font-bold tracking-wider mb-2">Composição & Ingredientes</h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-stone-600">
-                {produtoEmModal.detalhes?.map((det, idx) => <div key={idx} className="bg-[#FAF1EA]/40 px-3 py-1.5 border rounded">✦ {det}</div>)}
-              </div>
-            </div>
-
-            <button 
-              onClick={() => { 
-                adicionarAoCarrinho(produtoEmModal); 
-                setIdProdutoVisualizar(null); 
-              }} 
-              className="w-full py-3 bg-[#8B0000] text-white text-xs uppercase font-bold tracking-wider rounded-lg mt-2 shadow-md hover:bg-[#A00000]"
-            >
-              Adicionar à Sacola — {CONFIG.MOEDA} {produtoEmModal.preco.toFixed(2)}
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
